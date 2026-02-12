@@ -1,0 +1,183 @@
+
+# REST API JSON Payload Documentation
+
+## GET /api/audits/{auditId}/findings - Get Audit Findings List
+
+### Request Parameters
+```json
+{
+  "auditId": 1392092,
+  "pageNumber": 1,
+  "pageSize": 10,
+  "filters": {
+    "categories": ["Non-Conformity", "Observation", "Opportunity"],
+    "statuses": ["Open", "Closed", "In Progress"],
+    "priorities": ["Critical", "Major", "Minor"],
+    "services": [1616, 1478],
+    "siteIds": [171912],
+    "dateRange": {
+      "openDateFrom": "2021-01-01",
+      "openDateTo": "2021-12-31",
+      "dueDateFrom": "2021-01-01",
+      "dueDateTo": "2021-12-31"
+    }
+  },
+  "sortBy": "openDate",
+  "sortDirection": "desc"
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "findings": [
+      {
+        "findingsId": 501,
+        "findingNumber": "F-001",
+        "auditId": 1392092,
+        "title": "Document Control Non-Conformity",
+        "description": "Document control procedure not being followed consistently across all departments",
+        "category": "Non-Conformity",
+        "priority": "Major",
+        "status": "Open",
+        "companyId": 377,
+        "companyName": "Britvic Ltd",
+        "siteId": 171912,
+        "siteName": "Britvic Ltd [Rugby]",
+        "services": [
+          {
+            "serviceId": 1616,
+            "serviceName": "McDonalds SQMS - Full Audit"
+          }
+        ],
+        "clause": "4.2.3",
+        "standard": "ISO 9001:2015",
+        "openDate": "2021-01-05",
+        "dueDate": "2021-02-05",
+        "acceptedDate": "2021-01-07",
+        "closedDate": null,
+        "assignedTo": {
+          "userId": 45,
+          "userName": "Quality Manager",
+          "email": "quality@britvic.com"
+        },
+        "evidence": [
+          {
+            "evidenceId": 1001,
+            "description": "Photo of outdated document in use",
+            "fileName": "evidence_001.jpg",
+            "uploadDate": "2021-01-05"
+          }
+        ],
+        "correctiveActions": [
+          {
+            "actionId": 2001,
+            "description": "Update document control procedure",
+            "assignedTo": "John Doe",
+            "dueDate": "2021-01-20",
+            "status": "In Progress"
+          }
+        ],
+        "rootCause": "Lack of training on updated procedures",
+        "auditTrail": [
+          {
+            "date": "2021-01-05",
+            "action": "Finding raised",
+            "user": "Della Harrington"
+          },
+          {
+            "date": "2021-01-07",
+            "action": "Finding accepted by client",
+            "user": "Quality Manager"
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "totalFindings": 1,
+      "byCategory": {
+        "nonConformity": 1,
+        "observation": 0,
+        "opportunity": 0
+      },
+      "byStatus": {
+        "open": 1,
+        "inProgress": 0,
+        "closed": 0
+      },
+      "byPriority": {
+        "critical": 0,
+        "major": 1,
+        "minor": 0
+      }
+    },
+    "totalCount": 1,
+    "pageNumber": 1,
+    "pageSize": 10,
+    "hasNextPage": false,
+    "hasPreviousPage": false
+  },
+  "isSuccess": true,
+  "message": "Audit findings retrieved successfully",
+  "errorCode": null
+}
+```
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Audit not found",
+  "errorCode": "AUDIT_NOT_FOUND"
+}
+```
+
+## POST /api/audits/{auditId}/findings - Create New Finding
+
+### Request Payload
+```json
+{
+  "auditId": 1392092,
+  "title": "Document Control Non-Conformity",
+  "description": "Document control procedure not being followed consistently",
+  "category": "Non-Conformity",
+  "priority": "Major",
+  "clause": "4.2.3",
+  "standard": "ISO 9001:2015",
+  "siteId": 171912,
+  "serviceIds": [1616],
+  "dueDate": "2021-02-05",
+  "assignedToUserId": 45,
+  "rootCause": "Lack of training on updated procedures",
+  "recommendedAction": "Provide training and update procedures",
+  "evidence": [
+    {
+      "description": "Photo of outdated document in use",
+      "fileName": "evidence_001.jpg",
+      "fileData": "base64EncodedFileData"
+    }
+  ],
+  "createdBy": 15
+}
+```
+
+# Original GraphQL Documentation
+
+ba-scecp-r2-findingservice-dev
+Payload
+-------
+{"operationName":"GetAuditFindingList","variables":{"auditId":1392092},"query":"query GetAuditFindingList($auditId: Int!) {\n  viewFindings(auditId: $auditId) {\n    data {\n      acceptedDate\n      auditId\n      category\n      companyId\n      closedDate\n      dueDate\n      findingNumber\n      findingsId\n      openDate\n      services\n      siteId\n      status\n      title\n      __typename\n    }\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+
+{
+    "data": {
+        "viewFindings": {
+            "data": [],
+            "errorCode": "",
+            "isSuccess": true,
+            "message": "",
+            "__typename": "BaseGraphResponseOfIEnumerableOfFindingsListResponse"
+        }
+    }
+}

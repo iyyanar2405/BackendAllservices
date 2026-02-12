@@ -1,0 +1,36 @@
+
+auditservice-dev
+Payload
+---------
+{"operationName":"GetSubAudits","variables":{"auditId":1392092},"query":"query GetSubAudits($auditId: Int!) {\n  viewSubAudits(auditId: $auditId) {\n    data {\n      auditId\n      sites\n      services\n      status\n      startDate\n      endDate\n      auditorTeam\n      __typename\n    }\n    errorCode\n    message\n    isSuccess\n    __typename\n  }\n}"}
+
+Response
+--------------
+{
+    "data": {
+        "viewSubAudits": {
+            "data": [
+                {
+                    "auditId": 1392092,
+                    "sites": [
+                        171912
+                    ],
+                    "services": [
+                        1616
+                    ],
+                    "status": "Completed",
+                    "startDate": "2021-01-05",
+                    "endDate": "2021-01-05",
+                    "auditorTeam": [
+                        "Della Harrington"
+                    ],
+                    "__typename": "SiteAuditsListResponse"
+                }
+            ],
+            "errorCode": "",
+            "message": "Success",
+            "isSuccess": true,
+            "__typename": "BaseGraphResponseOfListOfSiteAuditsListResponse"
+        }
+    }
+}

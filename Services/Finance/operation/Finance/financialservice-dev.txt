@@ -1,0 +1,44 @@
+financialservice-dev
+
+payloads
+-------
+{
+  "operationName": "GetInvoiceList",
+  "variables": {},
+  "query": "query GetInvoiceList {\n  InvoiceListPage {\n    data {\n      items {\n        amount\n        billingAddress\n        company\n        contactPerson\n        dueDate\n        invoice\n        issueDate\n        originalInvoice\n        plannedPaymentDate\n        referenceNumber\n        status\n        reportingCountry\n        projectNumber\n        accountDNVId\n        __typename\n      }\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"
+}
+
+response
+-------
+{
+  "data": {
+    "InvoiceListPage": {
+      "data": {
+        "items": [
+          {
+            "amount": "102380000.37 USD",
+            "billingAddress": "3400 Millington Rd, 53511-9554, Beloit, US",
+            "company": "Kerry",
+            "contactPerson": "Accounts Payable",
+            "dueDate": "2019-11-25T00:00:00Z",
+            "invoice": "509010017719",
+            "issueDate": "2019-09-26T00:00:00Z",
+            "originalInvoice": null,
+            "plannedPaymentDate": "2025-09-11T00:00:00Z",
+            "referenceNumber": null,
+            "status": "Overdue",
+            "reportingCountry": "US",
+            "projectNumber": "PRJC-581396-2018-SCM-USA",
+            "accountDNVId": "10469762",
+            "__typename": "GetInvoiceList"
+          }
+        ],
+        "__typename": "InvoiceListPageData"
+      },
+      "isSuccess": true,
+      "message": "Success",
+      "errorCode": "",
+      "__typename": "ApiResponseOfInvoiceListPageData"
+    }
+  }
+}

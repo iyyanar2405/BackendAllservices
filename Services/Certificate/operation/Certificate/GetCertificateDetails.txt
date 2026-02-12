@@ -1,0 +1,219 @@
+
+# REST API JSON Payload Documentation
+
+## GET /api/certificates/{certificateId} - Get Certificate Details
+
+### Request Parameters
+```json
+{
+  "certificateId": 678603,
+  "includeHistory": true,
+  "includeDocuments": true,
+  "includeAudits": true,
+  "includeAdditionalScopes": true
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "certificateId": 678603,
+    "certificateNumber": "10000502009-MSC-ACCREDIA-ITA",
+    "status": "In Progress",
+    "certificateType": "Initial",
+    "creationDate": "2024-03-07",
+    "issuedDate": null,
+    "validFromDate": "2022-06-07",
+    "validUntilDate": "2025-06-07",
+    "suspendedDate": null,
+    "withdrawnDate": null,
+    "revisionNumber": "2",
+    "newCertificateId": null,
+    "projectNumber": "PRJC-418139-2012-MSC-ITA",
+    "qRCodeLink": "https://certificates.company.com/verify/10000502009-MSC-ACCREDIA-ITA",
+    "company": {
+      "companyId": 478,
+      "companyName": "Brembo N.V.",
+      "reportingCountry": "IT",
+      "accountDNVId": "1222418",
+      "contactPerson": "Quality Manager",
+      "contactEmail": "quality@brembo.com"
+    },
+    "site": {
+      "siteId": 172208,
+      "siteNameInPrimaryLanguage": "Brembo N.V. Performance Curno",
+      "siteAddressInPrimaryLanguage": "Via Brembo, 25 - 24035 Curno (BG) - Italy",
+      "siteNameInSecondaryLanguage": "Brembo N.V. Performance Curno",
+      "siteAddressInSecondaryLanguage": "Via Brembo, 25 - 24035 Curno (BG) - Italia"
+    },
+    "services": [
+      {
+        "serviceId": 1184,
+        "serviceName": "ISO 45001:2018",
+        "standard": "ISO 45001:2018",
+        "accreditationBody": "ACCREDIA"
+      }
+    ],
+    "scope": {
+      "primaryLanguage": "English",
+      "scopeInPrimaryLanguage": "Manufacturing of Carbon Carbon Blanks (Discs and Pads) by thermochemical processes. Manufacturing of brake systems and wheels for high performance and racing markets in automotive and motorcycle sectors by machining operations, assembly and testing (IAF 22, 17)",
+      "secondaryLanguage": "Italian",
+      "scopeInSecondaryLanguage": "Produzione di grezzi in carbonio (dischi e pastiglie) mediante processi termochimici. Produzione di sistemi frenanti e ruote per i mercati ad alte prestazioni e racing nei settori automobilistico e motociclistico mediante lavorazioni meccaniche, assemblaggio e collaudo (IAF 22, 17)",
+      "scopeInAdditionalLanguages": [
+        {
+          "language": "German",
+          "scope": "Herstellung von Carbon-Carbon-Rohlingen durch thermochemische Verfahren..."
+        }
+      ]
+    },
+    "audits": [
+      {
+        "auditId": 1392092,
+        "auditType": "Initial Audit",
+        "auditDate": "2022-05-15",
+        "leadAuditor": "Della Harrington",
+        "status": "Completed",
+        "findingsCount": 2
+      },
+      {
+        "auditId": 1495823,
+        "auditType": "Surveillance Audit",
+        "auditDate": "2023-05-20",
+        "leadAuditor": "Marco Rossi",
+        "status": "Scheduled",
+        "findingsCount": 0
+      }
+    ],
+    "documents": [
+      {
+        "documentId": 5001,
+        "documentName": "Certificate PDF",
+        "documentType": "Certificate",
+        "language": "English",
+        "uploadDate": "2024-03-07",
+        "fileSize": "1.2 MB",
+        "downloadUrl": "/api/certificates/678603/documents/5001/download"
+      },
+      {
+        "documentId": 5002,
+        "documentName": "Scope Annex",
+        "documentType": "Annex",
+        "language": "Italian",
+        "uploadDate": "2024-03-07",
+        "fileSize": "0.8 MB"
+      }
+    ],
+    "history": [
+      {
+        "historyId": 10001,
+        "action": "Certificate Created",
+        "date": "2024-03-07",
+        "performedBy": "System Admin",
+        "details": "Initial certificate creation"
+      },
+      {
+        "historyId": 10002,
+        "action": "Revision Updated",
+        "date": "2024-03-15",
+        "performedBy": "Quality Manager",
+        "details": "Updated revision number to 2"
+      }
+    ],
+    "renewal": {
+      "renewalRequired": true,
+      "renewalDueDate": "2025-03-07",
+      "renewalStatus": "Pending",
+      "daysUntilRenewal": 120
+    },
+    "verification": {
+      "verificationCode": "CERT-VER-123456",
+      "lastVerified": "2024-01-15T10:30:00Z",
+      "verificationUrl": "https://verify.company.com/10000502009-MSC-ACCREDIA-ITA"
+    },
+    "createdDate": "2024-03-07T10:00:00Z",
+    "createdBy": "Certificate Manager",
+    "modifiedDate": "2024-03-15T14:30:00Z",
+    "modifiedBy": "Quality Manager"
+  },
+  "isSuccess": true,
+  "message": "Certificate details retrieved successfully",
+  "errorCode": null
+}
+```
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Certificate not found",
+  "errorCode": "CERTIFICATE_NOT_FOUND"
+}
+```
+
+## PUT /api/certificates/{certificateId}/status - Update Certificate Status
+
+### Request Payload
+```json
+{
+  "certificateId": 678603,
+  "newStatus": "Suspended",
+  "reason": "Non-compliance identified during surveillance audit",
+  "effectiveDate": "2024-09-19",
+  "notifyClient": true,
+  "comments": "Suspended pending corrective action completion",
+  "modifiedBy": 15
+}
+```
+
+# Original GraphQL Documentation
+
+certificateservice-dev
+payload
+-----
+{"operationName":"GetCertificateDetails","variables":{"certificateId":678603},"query":"query GetCertificateDetails($certificateId: Int!) {\n  viewCertificateDetails(certificateId: $certificateId) {\n    isSuccess\n    data {\n      certificateId\n      certificateNumber\n      creationDate\n      issuedDate\n      newCertificateId\n      primaryLanguage\n      revisionNumber\n      scopeInAdditionalLanguages {\n        language\n        scope\n        __typename\n      }\n      scopeInPrimaryLanguage\n      scopeInSecondaryLanguage\n      secondaryLanguage\n      services\n      siteAddressInPrimaryLanguage\n      siteNameInPrimaryLanguage\n      status\n      suspendedDate\n      validUntilDate\n      withdrawnDate\n      qRCodeLink\n      projectNumber\n      reportingCountry\n      accountDNVId\n      __typename\n    }\n    __typename\n  }\n}"}
+response
+------- 
+{
+    "data": {
+        "viewCertificateDetails": {
+            "isSuccess": true,
+            "data": {
+                "certificateId": 678603,
+                "certificateNumber": "10000502009-MSC-ACCREDIA-ITA",
+                "creationDate": "2024-03-07",
+                "issuedDate": null,
+                "newCertificateId": null,
+                "primaryLanguage": "English",
+                "revisionNumber": "2",
+                "scopeInAdditionalLanguages": [
+                    {
+                        "language": null,
+                        "scope": null,
+                        "__typename": "AdditionalScopeData"
+                    }
+                ],
+                "scopeInPrimaryLanguage": "Manufacturing of Carbon Carbon Blanks (Discs and Pads) by thermochemical processes. Manufacturing of brake systems and wheels for high performance and racing markets in automotive and motorcycle sectors by machining operations, assembly and testing (IAF 22, 17)",
+                "scopeInSecondaryLanguage": "Produzione di grezzi in carbonio (dischi e pastiglie) mediante processi termochimici. Produzione di sistemi frenanti e ruote per i mercati ad alte prestazioni e racing nei settori automobilistico e motociclistico mediante lavorazioni meccaniche, assemblaggio e collaudo (IAF 22, 17)",
+                "secondaryLanguage": "Italian",
+                "services": [
+                    "ISO 45001:2018"
+                ],
+                "siteAddressInPrimaryLanguage": "Via Brembo, 25 - 24035 Curno (BG) - Italy",
+                "siteNameInPrimaryLanguage": "Brembo N.V. Performance Curno",
+                "status": "In Progress",
+                "suspendedDate": null,
+                "validUntilDate": null,
+                "withdrawnDate": null,
+                "qRCodeLink": null,
+                "projectNumber": "PRJC-418139-2012-MSC-ITA",
+                "reportingCountry": "IT",
+                "accountDNVId": "1222418",
+                "__typename": "CertificateDetailResponse"
+            },
+            "__typename": "BaseGraphResponseOfCertificateDetailResponse"
+        }
+    }
+}
+

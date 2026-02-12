@@ -1,0 +1,33 @@
+notificationservice-dev
+payload
+------
+{"operationName":"ActionFilterCategories","variables":{"companies":[],"services":[],"sites":[]},"query":"query ActionFilterCategories($companies: [Int!], $services: [Int!], $sites: [Int!]) {\n  actionCategoriesFilter(\n    companies: $companies\n    services: $services\n    sites: $sites\n  ) {\n    data {\n      id\n      label\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "actionCategoriesFilter": {
+            "data": [
+                {
+                    "id": 3,
+                    "label": "Findings",
+                    "__typename": "ActionCategoryFilterResponse"
+                },
+                {
+                    "id": 4,
+                    "label": "Schedule",
+                    "__typename": "ActionCategoryFilterResponse"
+                },
+                {
+                    "id": 2,
+                    "label": "Certificates",
+                    "__typename": "ActionCategoryFilterResponse"
+                }
+            ],
+            "isSuccess": true,
+            "message": "Success",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfListOfActionCategoryFilterResponse"
+        }
+    }
+}

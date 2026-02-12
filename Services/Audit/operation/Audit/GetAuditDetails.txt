@@ -1,0 +1,169 @@
+
+# REST API JSON Payload Documentation
+
+## GET /api/audits/{auditId} - Get Audit Details
+
+### Request Parameters
+```json
+{
+  "auditId": 1392092,
+  "includeFindings": true,
+  "includeDocuments": true,
+  "includeTeamMembers": true
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "auditId": 1392092,
+    "auditNumber": "AUD-2021-001",
+    "auditType": "ASOS - Recurring",
+    "status": "Completed",
+    "startDate": "2021-01-05",
+    "endDate": "2021-01-05",
+    "duration": 1,
+    "leadAuditor": {
+      "id": 15,
+      "name": "Della Harrington",
+      "email": "della.harrington@company.com",
+      "certifications": ["ISO 9001 Lead Auditor"]
+    },
+    "auditorTeam": [
+      {
+        "id": 15,
+        "name": "Della Harrington",
+        "role": "Lead Auditor",
+        "email": "della.harrington@company.com"
+      },
+      {
+        "id": 23,
+        "name": "John Smith",
+        "role": "Auditor",
+        "email": "john.smith@company.com"
+      }
+    ],
+    "company": {
+      "companyId": 377,
+      "companyName": "Britvic Ltd",
+      "contactPerson": "Jane Doe",
+      "contactEmail": "jane.doe@britvic.com"
+    },
+    "site": {
+      "siteId": 171912,
+      "siteName": "Britvic Ltd [Rugby]",
+      "siteAddress": "Rugby Factory, Aventine Way, Glebe Farm Industrial Estate, Rugby, CV21 1HA, United Kingdom",
+      "contactPerson": "Site Manager",
+      "phone": "+44-123-456-7890"
+    },
+    "services": [
+      {
+        "serviceId": 1616,
+        "serviceName": "McDonalds SQMS - Full Audit",
+        "standard": "SQMS",
+        "scope": "Full quality management system audit"
+      }
+    ],
+    "certificate": {
+      "certificateId": 25641,
+      "certificateNumber": "CERT-2021-001",
+      "status": "Valid",
+      "issueDate": "2021-01-10",
+      "expiryDate": "2024-01-10"
+    },
+    "contract": {
+      "contractId": 15872,
+      "contractNumber": "CON-2020-045",
+      "serviceValue": 15000.00
+    },
+    "findings": [
+      {
+        "findingId": 501,
+        "category": "Non-Conformity",
+        "description": "Document control procedure not followed",
+        "clause": "4.2.3",
+        "status": "Closed",
+        "priority": "Major"
+      }
+    ],
+    "documents": [
+      {
+        "documentId": 1001,
+        "documentName": "Audit Report",
+        "documentType": "Report",
+        "uploadDate": "2021-01-06",
+        "fileSize": "2.5 MB"
+      }
+    ],
+    "auditPlan": {
+      "planningDate": "2020-12-15",
+      "objectives": "Verify QMS compliance",
+      "scope": "All processes",
+      "methodology": "ISO 19011 guidelines"
+    },
+    "createdDate": "2020-12-15T10:00:00Z",
+    "createdBy": "System Admin",
+    "modifiedDate": "2021-01-05T16:30:00Z",
+    "modifiedBy": "Della Harrington"
+  },
+  "isSuccess": true,
+  "message": "Audit details retrieved successfully",
+  "errorCode": null
+}
+```
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Audit not found",
+  "errorCode": "AUDIT_NOT_FOUND"
+}
+```
+
+# Original GraphQL Documentation
+
+ba-scecp-r2-auditservice-dev
+Payload
+--------
+{"operationName":"GetAuditDetails","variables":{"auditId":1392092},"query":"query GetAuditDetails($auditId: Int!) {\n  auditDetails(auditId: $auditId) {\n    data {\n      auditId\n      auditorTeam\n      endDate\n      leadAuditor\n      services\n      siteAddress\n      siteName\n      startDate\n      status\n      __typename\n    }\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+
+Response
+--------
+{
+    "data": {
+        "auditDetails": {
+            "data": {
+                "auditId": 1392092,
+                "auditorTeam": [
+                    ""
+                ],
+                "endDate": "2021-01-05",
+                "leadAuditor": "Della Harrington",
+                "services": [
+                    "McDonalds SQMS  - Full Audit"
+                ],
+                "siteAddress": "Rugby Factory, Aventine Way, Glebe Farm Industrial Estate, Rugby, CV21 1HA, United Kingdom",
+                "siteName": "Britvic Ltd [Rugby]",
+                "startDate": "2021-01-05",
+                "status": "Completed",
+                "__typename": "AuditDetailResponse"
+            },
+            "errorCode": "",
+            "isSuccess": true,
+            "message": "",
+            "__typename": "BaseGraphResponseOfAuditDetailResponse"
+        }
+    }
+}
+
+
+ba-scecpservices-r2-dev/v1/api/Documents/AuditDocumentList?auditId=1392092&planAndReport=true
+
+auditId
+1392092
+planAndReport
+true
+

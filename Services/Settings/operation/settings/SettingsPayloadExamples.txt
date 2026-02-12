@@ -1,0 +1,440 @@
+# REST API JSON Payload Documentation - Settings Operations
+
+## GET /api/settings/company-details - Get Company Settings Details
+
+### Request Payload (Query Parameters)
+```json
+{
+  "userId": 123
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "userStatus": "Completed",
+    "isAdmin": true,
+    "permissions": [
+      "settings.read",
+      "settings.update",
+      "company.manage",
+      "users.manage"
+    ],
+    "parentCompany": null,
+    "legalEntities": [
+      {
+        "accountId": 386,
+        "accountDNVId": "10305528",
+        "organizationName": "Air Products (BR) Limited",
+        "address": "Manchester Road Carrington",
+        "city": "Manchester",
+        "country": "United Kingdom",
+        "countryCode": "GB",
+        "countryId": 469,
+        "zipCode": "M31 4TG",
+        "vatNumber": "GB",
+        "poNumberRequired": false,
+        "isSerReqOpen": false,
+        "status": "Active",
+        "registrationDate": "2018-03-15T00:00:00Z",
+        "lastUpdated": "2025-01-10T14:30:00Z",
+        "contactDetails": {
+          "primaryContact": "John Smith",
+          "email": "john.smith@airproducts.com",
+          "phone": "+44-161-123-4567"
+        },
+        "businessDetails": {
+          "industry": "Chemical Manufacturing",
+          "employeeCount": 2500,
+          "annualRevenue": 50000000.00,
+          "currency": "GBP"
+        },
+        "preferences": {
+          "invoiceFrequency": "Monthly",
+          "paymentTerms": "Net 30",
+          "communicationLanguage": "English",
+          "timeZone": "Europe/London"
+        }
+      },
+      {
+        "accountId": 403,
+        "accountDNVId": "10467705",
+        "organizationName": "Air Products (BR) Ltd",
+        "address": "West Village Project Office Saltend Lane",
+        "city": "Hull",
+        "country": "United Kingdom",
+        "countryCode": "GB",
+        "countryId": 469,
+        "zipCode": "HU12 8RH",
+        "vatNumber": "GB000000032",
+        "poNumberRequired": false,
+        "isSerReqOpen": false,
+        "status": "Active"
+      }
+    ],
+    "globalSettings": {
+      "defaultCurrency": "GBP",
+      "defaultLanguage": "English",
+      "defaultTimeZone": "Europe/London",
+      "fiscalYearStart": "April",
+      "invoiceNumberFormat": "INV-{YYYY}-{####}",
+      "certificateNumberFormat": "CERT-{YYYY}-{####}"
+    },
+    "systemPreferences": {
+      "autoBackup": true,
+      "backupFrequency": "Daily",
+      "dataRetentionPeriod": 7,
+      "auditLogRetention": 5,
+      "notificationSettings": {
+        "emailNotifications": true,
+        "smsNotifications": false,
+        "pushNotifications": true
+      }
+    }
+  },
+  "isSuccess": true,
+  "message": "Company settings retrieved successfully",
+  "errorCode": null
+}
+```
+
+Note: Additional nested fields (contact details, business details, preferences, global settings) are optional and may be null unless configured.
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Access denied: Insufficient permissions",
+  "errorCode": "ACCESS_DENIED"
+}
+```
+
+## PUT /api/settings/company-details - Update Company Settings
+
+### Request Payload
+```json
+{
+  "legalEntityId": 386,
+  "organizationName": "Air Products (BR) Limited",
+  "address": "Manchester Road Carrington",
+  "city": "Manchester",
+  "countryId": 469,
+  "zipCode": "M31 4TG",
+  "vatNumber": "GB123456789",
+  "poNumberRequired": true,
+  "contactDetails": {
+    "primaryContact": "John Smith",
+    "email": "john.smith@airproducts.com",
+    "phone": "+44-161-123-4567"
+  },
+  "businessDetails": {
+    "industry": "Chemical Manufacturing",
+    "employeeCount": 2600,
+    "annualRevenue": 55000000.00
+  },
+  "preferences": {
+    "invoiceFrequency": "Quarterly",
+    "paymentTerms": "Net 45",
+    "communicationLanguage": "English",
+    "timeZone": "Europe/London"
+  },
+  "updatedBy": 15
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "legalEntityId": 386,
+    "organizationName": "Air Products (BR) Limited",
+    "updatedFields": [
+      "employeeCount",
+      "annualRevenue",
+      "invoiceFrequency",
+      "paymentTerms",
+      "vatNumber"
+    ],
+    "lastUpdated": "2025-09-19T10:00:00Z",
+    "updatedBy": "John Smith"
+  },
+  "isSuccess": true,
+  "message": "Company settings updated successfully",
+  "errorCode": null
+}
+```
+
+## GET /api/settings/system-preferences - Get System Preferences
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "generalSettings": {
+      "systemName": "Customer Portal",
+      "systemVersion": "2.1.0",
+      "maintenanceMode": false,
+      "maxFileUploadSize": 10485760,
+      "sessionTimeout": 3600,
+      "passwordPolicy": {
+        "minLength": 8,
+        "requireUppercase": true,
+        "requireLowercase": true,
+        "requireNumbers": true,
+        "requireSpecialChars": true,
+        "expirationDays": 90
+      }
+    },
+    "auditSettings": {
+      "auditReminders": true,
+      "reminderDaysBefore": 30,
+      "autoScheduling": false,
+      "defaultAuditDuration": 2
+    },
+    "certificateSettings": {
+      "expiryNotificationDays": 90,
+      "autoRenewalReminders": true,
+      "digitalSignature": true,
+      "qrCodeGeneration": true
+    },
+    "financialSettings": {
+      "defaultCurrency": "USD",
+      "taxCalculation": "Automatic",
+      "invoiceTemplateId": 1,
+      "paymentReminderDays": 15
+    },
+    "communicationSettings": {
+      "emailServerConfig": {
+        "smtpServer": "smtp.company.com",
+        "smtpPort": 587,
+        "useSSL": true
+      },
+      "notificationTemplates": [
+        {
+          "templateId": 1,
+          "templateName": "Audit Reminder",
+          "templateType": "Email"
+        }
+      ]
+    }
+  },
+  "isSuccess": true,
+  "message": "System preferences retrieved successfully",
+  "errorCode": null
+}
+```
+
+## PUT /api/settings/system-preferences - Update System Preferences
+
+### Request Payload
+```json
+{
+  "generalSettings": {
+    "sessionTimeout": 7200,
+    "maxFileUploadSize": 20971520,
+    "passwordPolicy": {
+      "minLength": 10,
+      "requireUppercase": true,
+      "requireLowercase": true,
+      "requireNumbers": true,
+      "requireSpecialChars": true,
+      "expirationDays": 60
+    }
+  },
+  "auditSettings": {
+    "auditReminders": true,
+    "reminderDaysBefore": 45,
+    "autoScheduling": true,
+    "defaultAuditDuration": 3
+  },
+  "certificateSettings": {
+    "expiryNotificationDays": 120,
+    "autoRenewalReminders": true,
+    "digitalSignature": true,
+    "qrCodeGeneration": true
+  },
+  "financialSettings": {
+    "defaultCurrency": "EUR",
+    "taxCalculation": "Manual",
+    "paymentReminderDays": 10
+  },
+  "updatedBy": 1
+}
+```
+
+## GET /api/settings/user-preferences/{userId} - Get User Preferences
+
+### Request Parameters
+```json
+{
+  "userId": 15
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "userId": 15,
+    "userName": "John Smith",
+    "preferences": {
+      "language": "en-US",
+      "timeZone": "America/New_York",
+      "dateFormat": "MM/dd/yyyy",
+      "timeFormat": "12h",
+      "currency": "USD",
+      "notifications": {
+        "email": true,
+        "browser": true,
+        "mobile": false,
+        "auditReminders": true,
+        "certificateExpiry": true,
+        "findingUpdates": true,
+        "invoiceAlerts": true
+      },
+      "dashboard": {
+        "defaultView": "overview",
+        "widgets": [
+          "pending-audits",
+          "certificate-status",
+          "recent-findings",
+          "upcoming-renewals",
+          "financial-summary"
+        ],
+        "refreshInterval": 300
+      },
+      "display": {
+        "theme": "light",
+        "compactMode": false,
+        "showHelpTips": true,
+        "itemsPerPage": 25
+      }
+    },
+    "lastUpdated": "2025-09-15T14:30:00Z"
+  },
+  "isSuccess": true,
+  "message": "User preferences retrieved successfully",
+  "errorCode": null
+}
+```
+
+## PUT /api/settings/user-preferences/{userId} - Update User Preferences
+
+### Request Payload
+```json
+{
+  "userId": 15,
+  "preferences": {
+    "language": "en-GB",
+    "timeZone": "Europe/London",
+    "dateFormat": "dd/MM/yyyy",
+    "currency": "GBP",
+    "notifications": {
+      "email": true,
+      "browser": false,
+      "mobile": true,
+      "auditReminders": true,
+      "certificateExpiry": true,
+      "findingUpdates": false
+    },
+    "dashboard": {
+      "defaultView": "audits",
+      "widgets": [
+        "pending-audits",
+        "certificate-status",
+        "financial-summary"
+      ],
+      "refreshInterval": 600
+    },
+    "display": {
+      "theme": "dark",
+      "compactMode": true,
+      "itemsPerPage": 50
+    }
+  },
+  "updatedBy": 15
+}
+```
+
+## GET /api/settings/notification-templates - Get Notification Templates
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "templates": [
+      {
+        "templateId": 1,
+        "templateName": "Audit Reminder",
+        "templateType": "Email",
+        "category": "Audit",
+        "subject": "Upcoming Audit Reminder - {{CompanyName}}",
+        "bodyHtml": "<p>Dear {{ContactName}},</p><p>This is a reminder that your audit is scheduled for {{AuditDate}}.</p>",
+        "bodyText": "Dear {{ContactName}}, This is a reminder that your audit is scheduled for {{AuditDate}}.",
+        "variables": ["CompanyName", "ContactName", "AuditDate", "AuditType"],
+        "isActive": true,
+        "createdDate": "2024-01-15T10:00:00Z",
+        "lastModified": "2025-08-10T14:30:00Z"
+      },
+      {
+        "templateId": 2,
+        "templateName": "Certificate Expiry Warning",
+        "templateType": "Email",
+        "category": "Certificate",
+        "subject": "Certificate Expiry Notice - {{CertificateNumber}}",
+        "bodyHtml": "<p>Your certificate {{CertificateNumber}} will expire on {{ExpiryDate}}.</p>",
+        "variables": ["CertificateNumber", "ExpiryDate", "CompanyName"],
+        "isActive": true
+      }
+    ],
+    "totalCount": 2
+  },
+  "isSuccess": true,
+  "message": "Notification templates retrieved successfully",
+  "errorCode": null
+}
+```
+
+## POST /api/settings/notification-templates - Create Notification Template
+
+### Request Payload
+```json
+{
+  "templateName": "Finding Notification",
+  "templateType": "Email",
+  "category": "Finding",
+  "subject": "New Finding Raised - {{AuditNumber}}",
+  "bodyHtml": "<p>A new finding has been raised in audit {{AuditNumber}} for {{CompanyName}}.</p><p>Finding: {{FindingDescription}}</p>",
+  "bodyText": "A new finding has been raised in audit {{AuditNumber}} for {{CompanyName}}. Finding: {{FindingDescription}}",
+  "variables": ["AuditNumber", "CompanyName", "FindingDescription", "DueDate"],
+  "isActive": true,
+  "createdBy": 1
+}
+```
+
+## Error Response Examples
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Invalid user ID provided",
+  "errorCode": "INVALID_USER_ID"
+}
+```
+
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Settings validation failed",
+  "errorCode": "VALIDATION_ERROR",
+  "validationErrors": [
+    {
+      "field": "sessionTimeout",
+      "message": "Session timeout must be between 300 and 28800 seconds"
+    }
+  ]
+}
+```

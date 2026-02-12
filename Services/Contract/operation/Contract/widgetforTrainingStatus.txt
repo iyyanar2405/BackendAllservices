@@ -1,0 +1,45 @@
+
+contactservice-dev
+
+Payload
+--------
+{"variables":{},"query":"{\n  widgetforTrainingStatus {\n    isSuccess\n    message\n    errorCode\n    data {\n      trainingData {\n        trainingName\n        trainingStatus\n        trainingDueDate\n        trainingLocation\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"}
+
+Response
+--------
+{
+    "data": {
+        "widgetforTrainingStatus": {
+            "isSuccess": true,
+            "message": "Successfully retrieved the TrainingStatus.",
+            "errorCode": "",
+            "data": {
+                "trainingData": [
+                    {
+                        "trainingName": "Test Online Course",
+                        "trainingStatus": "Incomplete",
+                        "trainingDueDate": "25.03.2025",
+                        "trainingLocation": "Online",
+                        "__typename": "WidgetTrainingDataResponsefinalResult"
+                    },
+                    {
+                        "trainingName": "Test Virtual Class",
+                        "trainingStatus": "No Show",
+                        "trainingDueDate": "25.03.2025",
+                        "trainingLocation": "Virtual Class",
+                        "__typename": "WidgetTrainingDataResponsefinalResult"
+                    },
+                    {
+                        "trainingName": "Test Classroom",
+                        "trainingStatus": "Completed",
+                        "trainingDueDate": "27.04.2025",
+                        "trainingLocation": "Classroom",
+                        "__typename": "WidgetTrainingDataResponsefinalResult"
+                    }
+                ],
+                "__typename": "WidgetTrainingDataResponse"
+            },
+            "__typename": "BaseGraphResponseOfWidgetTrainingDataResponse"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+contactservice-dev
+payload
+-------
+{"operationName":"GetPreferences","variables":{"objectType":"Grid","objectName":"Certificates","pageName":"CertificateList"},"query":"query GetPreferences($objectType: String!, $objectName: String!, $pageName: String!) {\n  preferences(\n    objectType: $objectType\n    objectName: $objectName\n    pageName: $pageName\n  ) {\n    data {\n      pageName\n      objectType\n      objectName\n      preferenceDetail\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "preferences": {
+            "data": {
+                "pageName": "CertificateList",
+                "objectType": "Grid",
+                "objectName": "Certificates",
+                "preferenceDetail": "{\"filters\":{\"certificateNumber\":[{\"matchMode\":\"in\",\"operator\":\"and\",\"value\":[]}],\"companyName\":[{\"matchMode\":\"in\",\"operator\":\"and\",\"value\":[]}],\"service\":[{\"matchMode\":\"in\",\"operator\":\"and\",\"value\":[]}],\"status\":[{\"matchMode\":\"in\",\"operator\":\"and\",\"value\":[]}],\"validUntil\":[{\"matchMode\":\"dateBefore\",\"operator\":\"and\",\"value\":[]}],\"issuedDate\":[{\"matchMode\":\"dateBefore\",\"operator\":\"and\",\"value\":[]}],\"site\":[{\"matchMode\":\"in\",\"operator\":\"and\",\"value\":[]}],\"city\":[{\"matchMode\":\"in\",\"operator\":\"and\",\"value\":[]}],\"certificateId\":[{\"matchMode\":\"in\",\"operator\":\"and\",\"value\":[]}]},\"rowsPerPage\":10,\"columns\":[{\"field\":\"certificateNumber\",\"displayName\":\"certificate.certificateList.certificateNumber\",\"type\":\"searchCheckboxFilter\",\"cellType\":\"link\",\"hidden\":false,\"fixed\":true,\"sticky\":false,\"routeIdField\":\"certificateId\"},{\"field\":\"certificateId\",\"displayName\":\"certificate.certificateList.certificateId\",\"type\":\"searchCheckboxFilter\",\"cellType\":\"text\",\"hidden\":false,\"fixed\":false,\"sticky\":false},{\"field\":\"companyName\",\"displayName\":\"certificate.certificateList.company\",\"type\":\"searchCheckboxFilter\",\"cellType\":\"text\",\"hidden\":false,\"fixed\":false,\"sticky\":false},{\"field\":\"service\",\"displayName\":\"certificate.certificateList.service\",\"type\":\"searchCheckboxFilter\",\"cellType\":\"text\",\"hidden\":false,\"fixed\":false,\"sticky\":false},{\"field\":\"status\",\"displayName\":\"certificate.certificateList.status\",\"type\":\"checkboxFilter\",\"cellType\":\"status\",\"hidden\":false,\"fixed\":false,\"sticky\":false},{\"field\":\"validUntil\",\"displayName\":\"certificate.certificateList.validUntil\",\"type\":\"dateFilter\",\"cellType\":\"date\",\"hidden\":false,\"fixed\":false,\"sticky\":false},{\"field\":\"issuedDate\",\"displayName\":\"certificate.certificateList.issuedDate\",\"type\":\"dateFilter\",\"cellType\":\"date\",\"hidden\":false,\"fixed\":false,\"sticky\":false},{\"field\":\"site\",\"displayName\":\"certificate.certificateList.site\",\"type\":\"searchCheckboxFilter\",\"cellType\":\"text\",\"hidden\":false,\"fixed\":false,\"sticky\":false},{\"field\":\"city\",\"displayName\":\"certificate.certificateList.city\",\"type\":\"searchCheckboxFilter\",\"cellType\":\"text\",\"hidden\":false,\"fixed\":false,\"sticky\":false}],\"showDefaultColumnsButton\":true}",
+                "__typename": "PreferenceResponse"
+            },
+            "isSuccess": true,
+            "message": "",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfPreferenceResponse"
+        }
+    }
+}

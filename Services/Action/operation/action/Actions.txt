@@ -1,0 +1,174 @@
+notificationservice-dev
+payload
+--------
+{"operationName":"Actions","variables":{"category":[],"company":[],"service":[],"site":[],"isHighPriority":false,"pageNumber":1,"pageSize":10},"query":"query Actions($category: [Int!], $service: [Int!], $company: [Int!], $site: [Int!], $isHighPriority: Boolean!, $pageNumber: Int!, $pageSize: Int!) {\n  actions(\n    category: $category\n    company: $company\n    service: $service\n    site: $site\n    isHighPriority: $isHighPriority\n    pageNumber: $pageNumber\n    pageSize: $pageSize\n  ) {\n    data {\n      currentPage\n      items {\n        action\n        dueDate\n        highPriority\n        id\n        message\n        language\n        service\n        site\n        entityType\n        entityId\n        subject\n        snowLink\n        __typename\n      }\n      totalItems\n      totalPages\n      __typename\n    }\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "actions": {
+            "data": {
+                "currentPage": 1,
+                "items": [
+                    {
+                        "action": "Request Resolved by DNV, resolutions is provided to the customer",
+                        "dueDate": null,
+                        "highPriority": 0,
+                        "id": 3784,
+                        "message": "<p>Request {CS0002565} resolved<br><br>\r\n\t\tYour request {CS0002565} has been resolved.<br><br>\r\n\t\tShould we not hear from you within 5 days, the request will automatically be marked as closed.​\r\n        </p>",
+                        "language": "en",
+                        "service": "GLOBAL STANDARD FOR STORAGE AND DISTRIBUTION Issue 4: November 2020",
+                        "site": "Berlin Packaging UK Ltd",
+                        "entityType": "schedule",
+                        "entityId": "3999030",
+                        "subject": "Review solution",
+                        "snowLink": "9dbee1262b2762101450ff65d891bf4a",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Awaiting Customer Info - Initial message, DNV request for additional information from customer",
+                        "dueDate": null,
+                        "highPriority": 0,
+                        "id": 3789,
+                        "message": "<p>\r\n\t\tAction required: More information needed to process request {CS0002708}<br><br>\r\n\t\tWe require additional details to handle your request {CS0002708} regarding {Add a New Site to existing Service}.​<br>\r\n\t\t\r\n        </p>",
+                        "language": "en",
+                        "service": "IFS Logistics Version 3 December 2023",
+                        "site": "BERLIN PACKAGING ITALY S.p.A. Hq Trezzano",
+                        "entityType": "certificates",
+                        "entityId": "675288",
+                        "subject": "Provide information",
+                        "snowLink": "a1355de73b77a6101cfcd2c5e4e45a53",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Awaiting Customer Info - Initial message, DNV request for additional information from customer",
+                        "dueDate": null,
+                        "highPriority": 0,
+                        "id": 3790,
+                        "message": "<p>\r\n\t\tAction required: More information needed to process request {CS0002708}<br><br>\r\n\t\tWe require additional details to handle your request {CS0002708} regarding {Add a New Site to existing Service}.​<br>\r\n\t\t\r\n        </p>",
+                        "language": "en",
+                        "service": "IFS Logistics Version 3 December 2023",
+                        "site": "BERLIN PACKAGING ITALY S.p.A. Hq Trezzano",
+                        "entityType": "certificates",
+                        "entityId": "675288",
+                        "subject": "Provide information",
+                        "snowLink": "a1355de73b77a6101cfcd2c5e4e45a53",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Awaiting Customer Info - Initial message, DNV request for additional information from customer",
+                        "dueDate": null,
+                        "highPriority": 0,
+                        "id": 3791,
+                        "message": "<p>\r\n\t\tAction required: More information needed to process request {CS0002708}<br><br>\r\n\t\tWe require additional details to handle your request {CS0002708} regarding {Add a New Site to existing Service}.​<br>\r\n\t\t\r\n        </p>",
+                        "language": "en",
+                        "service": "IFS Logistics Version 3 December 2023",
+                        "site": "BERLIN PACKAGING ITALY S.p.A. Hq Trezzano",
+                        "entityType": "certificates",
+                        "entityId": "675288",
+                        "subject": "Provide information",
+                        "snowLink": "a1355de73b77a6101cfcd2c5e4e45a53",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Audit to be confirmed (reminder)",
+                        "dueDate": "2024-12-29",
+                        "highPriority": 0,
+                        "id": 3743,
+                        "message": "<p>Questo è un gentile promemoria per confermare la pianificazione prevista per il tuo prossimo <b>Re-certification Audit</b>, in accordo allo standard <b>ISO 9001:2015 || ISO 14001:2015 || ISO 45001:2018</b>:<br>\r\n\t<b>Sito: ISS Facility Services S.r.l.</b>\r\n\t<b>Data di inizio: 11-04-2025</b>\r\n\t<b>Data di fine: 11-04-2025</b>\r\n\t<b>Numero di giornate: 1.17</b><br>\r\n\tPer evitare ritardi, ti preghiamo di confermare la pianificazione dell’audit nella sezione Pianificazione.<br>\r\n    Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "service": "ISO 9001:2015 || ISO 14001:2015 || ISO 45001:2018",
+                        "site": "ISS Facility Services S.r.l.",
+                        "entityType": "Schedule",
+                        "entityId": "4385049",
+                        "subject": "Azione richiesta: conferma la tua pianificazione",
+                        "snowLink": "",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Audit to be confirmed (reminder)",
+                        "dueDate": "2025-01-09",
+                        "highPriority": 0,
+                        "id": 3749,
+                        "message": "<p>Questo è un gentile promemoria per confermare la pianificazione prevista per il tuo prossimo <b>Re-certification Audit</b>, in accordo allo standard <b>SQF Food Safety Code: Food Manufacturing, Edition 9</b>:<br>\r\n\t<b>Sito: Kerry</b>\r\n\t<b>Data di inizio: 22-04-2025</b>\r\n\t<b>Data di fine: 23-04-2025</b>\r\n\t<b>Numero di giornate: 2</b><br>\r\n\tPer evitare ritardi, ti preghiamo di confermare la pianificazione dell’audit nella sezione Pianificazione.<br>\r\n    Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "service": "SQF Food Safety Code: Food Manufacturing, Edition 9",
+                        "site": "Kerry",
+                        "entityType": "Schedule",
+                        "entityId": "3666922",
+                        "subject": "Azione richiesta: conferma la tua pianificazione",
+                        "snowLink": "",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Audit to be confirmed (reminder)",
+                        "dueDate": "2025-01-22",
+                        "highPriority": 0,
+                        "id": 3748,
+                        "message": "<p>Questo è un gentile promemoria per confermare la pianificazione prevista per il tuo prossimo <b>Re-certification Audit</b>, in accordo allo standard <b>SQF Food Safety Code: Food Manufacturing, Edition 9</b>:<br>\r\n\t<b>Sito: Kerry</b>\r\n\t<b>Data di inizio: 05-05-2025</b>\r\n\t<b>Data di fine: 06-05-2025</b>\r\n\t<b>Numero di giornate: 2</b><br>\r\n\tPer evitare ritardi, ti preghiamo di confermare la pianificazione dell’audit nella sezione Pianificazione.<br>\r\n    Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "service": "SQF Food Safety Code: Food Manufacturing, Edition 9",
+                        "site": "Kerry",
+                        "entityType": "Schedule",
+                        "entityId": "3666938",
+                        "subject": "Azione richiesta: conferma la tua pianificazione",
+                        "snowLink": "",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Confirmed reminder mail",
+                        "dueDate": "2025-03-20",
+                        "highPriority": 0,
+                        "id": 111,
+                        "message": "<p>Il  tuo prossimo Follow-up Audit in accordo al servizio SA 8000:2014  è previsto tra 30 giorni <br>\r\n    <b>Sito: Exprivia S.p.A.</b>\r\n\t<b>Data di inizio: 16-04-2025</b>\r\n\t<b>Data di fine: 16-04-2025</b>\r\n\t<b>Numero di giornate: 0.25</b><br>\r\n    Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "service": "SA 8000:2014",
+                        "site": "Exprivia S.p.A.",
+                        "entityType": "Schedule",
+                        "entityId": "3609712",
+                        "subject": "Promemoria: il tuo audit inizia tra 30 giorni",
+                        "snowLink": "",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Confirmed reminder mail",
+                        "dueDate": "2025-03-26",
+                        "highPriority": 0,
+                        "id": 3751,
+                        "message": "<p>Il  tuo prossimo Re-certification Audit in accordo al servizio SQF Food Safety Code: Food Manufacturing, Edition 9  è previsto tra 30 giorni <br>\r\n    <b>Sito: Kerry</b>\r\n\t<b>Data di inizio: 05-06-2025</b>\r\n\t<b>Data di fine: 06-06-2025</b>\r\n\t<b>Numero di giornate: 2</b><br>\r\n    Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "service": "SQF Food Safety Code: Food Manufacturing, Edition 9",
+                        "site": "Kerry",
+                        "entityType": "Schedule",
+                        "entityId": "3666922",
+                        "subject": "Promemoria: il tuo audit inizia tra 30 giorni",
+                        "snowLink": "",
+                        "__typename": "GetActionsList"
+                    },
+                    {
+                        "action": "Audit to be confirmed (reminder)",
+                        "dueDate": "2025-04-24",
+                        "highPriority": 0,
+                        "id": 27,
+                        "message": null,
+                        "language": "en",
+                        "service": null,
+                        "site": "171268",
+                        "entityType": "Schedule",
+                        "entityId": "3072992",
+                        "subject": null,
+                        "snowLink": "",
+                        "__typename": "GetActionsList"
+                    }
+                ],
+                "totalItems": 32,
+                "totalPages": 4,
+                "__typename": "ActionsPaginationResponse"
+            },
+            "errorCode": "",
+            "isSuccess": true,
+            "message": "",
+            "__typename": "BaseGraphResponseOfActionsPaginationResponse"
+        }
+    }
+}

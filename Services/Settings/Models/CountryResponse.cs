@@ -1,0 +1,10 @@
+namespace SettingsService.Models
+{
+    public class CountryResponse
+    {
+        public int Id { get; set; }
+        public string? CountryName { get; set; }
+        public string? CountryCode { get; set; }
+        public bool IsActive { get; set; }
+    }
+}

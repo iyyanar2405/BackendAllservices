@@ -1,0 +1,51 @@
+# REST API JSON Payload Documentation
+
+## PUT /api/invoices/planned-payment-date - Update Planned Payment Date
+
+### Request Payload
+```json
+{
+  "invoiceNumbers": ["509010017719", "462010001745"],
+  "plannedPaymentDate": "2025-09-18T00:00:00Z"
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": true,
+  "isSuccess": true,
+  "message": "Planned payment dates updated successfully.",
+  "errorCode": ""
+}
+```
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Invoice(s) not found: 509010017719",
+  "errorCode": "INVOICE_NOT_FOUND"
+}
+```
+
+# GraphQL Documentation
+
+payload
+-------
+{"operationName":"UpdatePlannedPaymentDate","variables":{"invoiceNumber":["509010017719"],"plannedPaymentDate":"2025-09-18T00:00:00Z"},"query":"mutation UpdatePlannedPaymentDate($invoiceNumber: [String!]!, $plannedPaymentDate: DateTime!) {\n  UpdatePlannedPaymentDate(invoiceNumber: $invoiceNumber, plannedPaymentDate: $plannedPaymentDate) {\n    data\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+
+response
+-------
+{
+  "data": {
+    "UpdatePlannedPaymentDate": {
+      "data": true,
+      "errorCode": "",
+      "isSuccess": true,
+      "message": "Planned payment dates updated successfully.",
+      "__typename": "ApiResponseOfBoolean"
+    }
+  }
+}

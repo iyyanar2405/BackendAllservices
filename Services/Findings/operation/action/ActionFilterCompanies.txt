@@ -1,0 +1,93 @@
+notificationservice-dev
+payload
+-------
+{"operationName":"ActionFilterCompanies","variables":{"categories":[],"services":[],"sites":[]},"query":"query ActionFilterCompanies($categories: [Int!], $services: [Int!], $sites: [Int!]) {\n  actionCompaniesFilter(\n    categories: $categories\n    services: $services\n    sites: $sites\n  ) {\n    data {\n      id\n      label\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "actionCompaniesFilter": {
+            "data": [
+                {
+                    "id": 341,
+                    "label": "FAVINI S.r.l.",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 353,
+                    "label": "UNILEVER ITALIA MANUFACTURING  SRL",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 364,
+                    "label": "MALAYSIAN AUTOMOTIVE LIGHTING SDN BHD",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 366,
+                    "label": "Ducati Motor Holding S.p.A.",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 368,
+                    "label": "Magneti Marelli UM Electronic Systems Pvt. Ltd.",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 380,
+                    "label": "MARELLI MÓVEIS PARA ESCRITÓRIO S/A",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 425,
+                    "label": "MAGNETI MARELLI SISTEMAGNETI MARELLI SISTEMAS AUTOMOTIVOS - INDUSTRIA E COMERCIO LTDA",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 428,
+                    "label": "MARELLI COFAP DO BRASIL LTDA",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 433,
+                    "label": "Magneti Marelli Sistemas Automotivos Indústria e Comércio Ltda",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 444,
+                    "label": "BRUNI GLASS SPA",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 451,
+                    "label": "Magneti Marelli Sistemas de Suspensión Promatcor Mexicana S de RL de CV",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 453,
+                    "label": "ISS World Services A/S",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 470,
+                    "label": "MARELLI SALTILLO MÉXICO S. DE R.L DE C.V",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 483,
+                    "label": "EXPRIVIA S.p.A.",
+                    "__typename": "ActionCompaniesFilterResponse"
+                },
+                {
+                    "id": 209597,
+                    "label": "Kerry",
+                    "__typename": "ActionCompaniesFilterResponse"
+                }
+            ],
+            "isSuccess": true,
+            "message": "Success",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfListOfActionCompaniesFilterResponse"
+        }
+    }
+}

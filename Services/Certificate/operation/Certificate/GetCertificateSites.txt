@@ -1,0 +1,30 @@
+
+certificateservice-dev
+payload
+-------
+{"operationName":"GetCertificateSites","variables":{"certificateId":678603},"query":"query GetCertificateSites($certificateId: Int!) {\n  sitesInScope(certificateId: $certificateId) {\n    data {\n      siteNameInPrimaryLanguage\n      siteNameInSecondaryLanguage\n      siteAddressInPrimaryLanguage\n      siteAddressInSecondaryLanguage\n      siteScopeInPrimaryLanguage\n      siteScopeInSecondaryLanguage\n      isPrimarySite\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+---------
+{
+    "data": {
+        "sitesInScope": {
+            "data": [
+                {
+                    "siteNameInPrimaryLanguage": "Brembo N.V. Performance Curno",
+                    "siteNameInSecondaryLanguage": "Brembo N.V. Performance Curno",
+                    "siteAddressInPrimaryLanguage": "Via Brembo, 25 - 24035 Curno (BG) - Italy",
+                    "siteAddressInSecondaryLanguage": "Via Brembo, 25 - 24035 Curno (BG) - Italia",
+                    "siteScopeInPrimaryLanguage": "Manufacturing of Carbon Carbon Blanks (Discs and Pads) by thermochemical processes. Manufacturing of brake systems and wheels for high performance and racing markets in automotive and motorcycle sectors by machining operations, assembly and testing",
+                    "siteScopeInSecondaryLanguage": "Produzione di grezzi in carbonio (dischi e pastiglie) mediante processi termochimici. Produzione di sistemi frenanti e ruote per i mercati ad alte prestazioni e racing nei settori automobilistico e motociclistico mediante lavorazioni meccaniche, assemblaggio e collaudo",
+                    "isPrimarySite": true,
+                    "__typename": "SitesInScopeResponse"
+                }
+            ],
+            "isSuccess": true,
+            "message": "",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfListOfSitesInScopeResponse"
+        }
+    }
+}
+

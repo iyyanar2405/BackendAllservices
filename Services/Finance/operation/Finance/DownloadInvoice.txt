@@ -1,0 +1,59 @@
+# REST API JSON Payload Documentation
+
+## GET /api/invoices/download - Download Invoice
+
+### Request (Query Parameters)
+- invoiceNumber (string, required, repeatable)
+- userId (int, optional)
+
+### Example Request
+GET /api/invoices/download?invoiceNumber=509010017719&userId=15
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "content": [37, 80, 68, 70, 45, 49, 46, 52],
+    "fileName": "Invoice_509010017719.pdf",
+    "isZipped": false
+  },
+  "isSuccess": true,
+  "message": "Success",
+  "errorCode": ""
+}
+```
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "No accessible invoices found for the provided invoice numbers.",
+  "errorCode": "NO_ACCESS_OR_NOT_FOUND"
+}
+```
+
+# GraphQL Documentation
+
+payload
+-------
+{"operationName":"DownloadInvoice","variables":{"invoiceNumber":["509010017719"]},"query":"query DownloadInvoice($invoiceNumber: [String!]!) {\n  DownloadInvoice(invoiceNumber: $invoiceNumber) {\n    isSuccess\n    data {\n      content\n      fileName\n      isZipped\n      __typename\n    }\n    errorCode\n    message\n    __typename\n  }\n}"}
+
+response
+-------
+{
+  "data": {
+    "DownloadInvoice": {
+      "isSuccess": true,
+      "data": {
+        "content": [37, 80, 68, 70, 45, 49, 46, 52],
+        "fileName": "Invoice_509010017719.pdf",
+        "isZipped": false,
+        "__typename": "DownloadInvoiceResponse"
+      },
+      "errorCode": "",
+      "message": "Success",
+      "__typename": "ApiResponseOfDownloadInvoiceResponse"
+    }
+  }
+}

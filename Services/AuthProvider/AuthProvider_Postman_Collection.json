@@ -1,0 +1,583 @@
+{
+  "info": {
+    "name": "AuthProvider API",
+    "description": "Complete API collection for AuthProvider authentication system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:7136/api"
+    },
+    {
+      "key": "jwt_token",
+      "value": ""
+    },
+    {
+      "key": "user_id",
+      "value": ""
+    },
+    {
+      "key": "role_id",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"iyyanarme@gmail.com\",\n  \"password\": \"HelpMe@&2405\",\n  \"deviceCode\": \"0\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/authorize/token",
+              "host": ["{{base_url}}"],
+              "path": ["authorize", "token"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('jwt_token', response.access_token);",
+                  "    console.log('JWT Token set:', response.access_token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"newuser@example.com\",\n  \"email\": \"newuser@example.com\",\n  \"password\": \"Password123!\",\n  \"confirmPassword\": \"Password123!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/authorize/register",
+              "host": ["{{base_url}}"],
+              "path": ["authorize", "register"]
+            }
+          }
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/authorize/refresh-token/{{refresh_token}}",
+              "host": ["{{base_url}}"],
+              "path": ["authorize", "refresh-token", "{{refresh_token}}"]
+            }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"iyyanarme@gmail.com\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/authorize/logout",
+              "host": ["{{base_url}}"],
+              "path": ["authorize", "logout"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Management",
+      "item": [
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user?page=1&pageSize=10",
+              "host": ["{{base_url}}"],
+              "path": ["user"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": "",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    if (response.data && response.data.items && response.data.items.length > 0) {",
+                  "        pm.collectionVariables.set('user_id', response.data.items[0].id);",
+                  "        console.log('User ID set:', response.data.items[0].id);",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["user", "{{user_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"testuser@example.com\",\n  \"email\": \"testuser@example.com\",\n  \"password\": \"Password123!\",\n  \"phoneNumber\": \"+1234567890\",\n  \"emailConfirmed\": true,\n  \"lockoutEnabled\": true,\n  \"twoFactorEnabled\": false\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/user",
+              "host": ["{{base_url}}"],
+              "path": ["user"]
+            }
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"updated.user@example.com\",\n  \"email\": \"updated.user@example.com\",\n  \"phoneNumber\": \"+1234567891\",\n  \"emailConfirmed\": true,\n  \"lockoutEnabled\": false,\n  \"twoFactorEnabled\": true\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/user/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["user", "{{user_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["user", "{{user_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Lock User Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lockoutMinutes\": 60,\n  \"reason\": \"Security violation\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/user/{{user_id}}/lock",
+              "host": ["{{base_url}}"],
+              "path": ["user", "{{user_id}}", "lock"]
+            }
+          }
+        },
+        {
+          "name": "Unlock User Account",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/{{user_id}}/unlock",
+              "host": ["{{base_url}}"],
+              "path": ["user", "{{user_id}}", "unlock"]
+            }
+          }
+        },
+        {
+          "name": "Reset User Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"newPassword\": \"NewPassword123!\",\n  \"confirmPassword\": \"NewPassword123!\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/user/{{user_id}}/reset-password",
+              "host": ["{{base_url}}"],
+              "path": ["user", "{{user_id}}", "reset-password"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Role Management",
+      "item": [
+        {
+          "name": "Get All Roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/role?page=1&pageSize=10",
+              "host": ["{{base_url}}"],
+              "path": ["role"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    if (response.data && response.data.items && response.data.items.length > 0) {",
+                  "        pm.collectionVariables.set('role_id', response.data.items[0].id);",
+                  "        console.log('Role ID set:', response.data.items[0].id);",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Role by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/role/{{role_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["role", "{{role_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Create Role",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"TestRole\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/role",
+              "host": ["{{base_url}}"],
+              "path": ["role"]
+            }
+          }
+        },
+        {
+          "name": "Update Role",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"UpdatedRole\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/role/{{role_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["role", "{{role_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Delete Role",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/role/{{role_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["role", "{{role_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Roles",
+      "item": [
+        {
+          "name": "Get User Roles",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/userroles/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["userroles", "{{user_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Assign Role to User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roleName\": \"User\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/userroles/{{user_id}}/assign",
+              "host": ["{{base_url}}"],
+              "path": ["userroles", "{{user_id}}", "assign"]
+            }
+          }
+        },
+        {
+          "name": "Remove Role from User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roleName\": \"User\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/userroles/{{user_id}}/remove",
+              "host": ["{{base_url}}"],
+              "path": ["userroles", "{{user_id}}", "remove"]
+            }
+          }
+        },
+        {
+          "name": "Check User Role",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/userroles/{{user_id}}/check/User",
+              "host": ["{{base_url}}"],
+              "path": ["userroles", "{{user_id}}", "check", "User"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Claims Management",
+      "item": [
+        {
+          "name": "Get User Claims",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/claims/user/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["claims", "user", "{{user_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Get Role Claims",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/claims/role/{{role_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["claims", "role", "{{role_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Add User Claim",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"iyyanarme@gmail.com\",\n  \"claimType\": \"permission\",\n  \"claimValue\": \"read_users\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/claims",
+              "host": ["{{base_url}}"],
+              "path": ["claims"]
+            }
+          }
+        },
+        {
+          "name": "Add Role Claim",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"roleName\": \"User\",\n  \"claimType\": \"access_level\",\n  \"claimValue\": \"basic\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/claims",
+              "host": ["{{base_url}}"],
+              "path": ["claims"]
+            }
+          }
+        },
+        {
+          "name": "Remove Claim",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userName\": \"iyyanarme@gmail.com\",\n  \"claimType\": \"permission\",\n  \"claimValue\": \"read_users\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/claims",
+              "host": ["{{base_url}}"],
+              "path": ["claims"]
+            }
+          }
+        },
+        {
+          "name": "Get Available Claim Types",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/claims/types",
+              "host": ["{{base_url}}"],
+              "path": ["claims", "types"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

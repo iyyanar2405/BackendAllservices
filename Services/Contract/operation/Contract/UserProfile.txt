@@ -1,0 +1,275 @@
+
+# REST API JSON Payload Documentation
+
+## GET /api/users/profile - Get User Profile
+
+### Request Payload (Query Parameters)
+```json
+{
+  "includeAccessLevels": true,
+  "includePreferences": true,
+  "includeCompanyDetails": true
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "userId": 15,
+    "firstName": "Customerportal",
+    "lastName": "user0",
+    "displayName": "Customerportal user0",
+    "email": "Customerportal.user0@gmail.com",
+    "phone": null,
+    "jobTitle": "Owner",
+    "department": "Operations",
+    "employeeId": "EMP-001",
+    "country": "USA",
+    "countryCode": "US",
+    "region": "",
+    "communicationLanguage": "Italian",
+    "portalLanguage": "en",
+    "veracityId": "ff145f9e-96d7-41ca-ad28-25cd3d2acb97",
+    "status": "Active",
+    "lastLoginDate": "2025-09-19T08:30:00Z",
+    "profilePicture": "/api/users/15/profile-picture",
+    "accessLevel": [
+      {
+        "roleId": 3,
+        "roleName": "Audits",
+        "roleLevel": [1, 2],
+        "permissions": [
+          "audit.read",
+          "audit.create",
+          "finding.read",
+          "finding.create"
+        ],
+        "description": "Full access to audit management"
+      },
+      {
+        "roleId": 4,
+        "roleName": "Certificates",
+        "roleLevel": [1, 2],
+        "permissions": [
+          "certificate.read",
+          "certificate.update"
+        ],
+        "description": "Certificate viewing and management"
+      },
+      {
+        "roleId": 5,
+        "roleName": "Contracts",
+        "roleLevel": [1, 2],
+        "permissions": [
+          "contract.read",
+          "contract.create",
+          "contract.update"
+        ],
+        "description": "Contract management access"
+      }
+    ],
+    "companyAccess": [
+      {
+        "companyId": 377,
+        "companyName": "Britvic Ltd",
+        "accessLevel": "Full",
+        "roleInCompany": "Primary Contact"
+      }
+    ],
+    "siteAccess": [
+      {
+        "siteId": 172208,
+        "siteName": "Main Manufacturing Plant",
+        "companyName": "Britvic Ltd",
+        "accessLevel": "Read/Write"
+      }
+    ],
+    "serviceAccess": [
+      {
+        "serviceId": 1184,
+        "serviceName": "ISO 9001:2015 Certification",
+        "accessLevel": "Full"
+      }
+    ],
+    "preferences": {
+      "language": "en",
+      "timeZone": "America/New_York",
+      "dateFormat": "MM/dd/yyyy",
+      "currency": "USD",
+      "notifications": {
+        "email": true,
+        "browser": true,
+        "mobile": false
+      },
+      "dashboard": {
+        "defaultView": "overview",
+        "widgets": [
+          "pending-audits",
+          "certificate-status",
+          "recent-findings"
+        ]
+      }
+    },
+    "securitySettings": {
+      "twoFactorEnabled": false,
+      "lastPasswordChange": "2025-01-15T10:00:00Z",
+      "passwordExpiryDate": "2025-04-15T10:00:00Z",
+      "accountLockout": false
+    },
+    "createdDate": "2024-01-15T10:00:00Z",
+    "lastModified": "2025-09-15T14:30:00Z"
+  },
+  "isSuccess": true,
+  "message": "User profile retrieved successfully",
+  "errorCode": null
+}
+```
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "User profile not found",
+  "errorCode": "USER_NOT_FOUND"
+}
+```
+
+## PUT /api/users/profile - Update User Profile
+
+### Request Payload
+```json
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@company.com",
+  "phone": "+1-555-123-4567",
+  "jobTitle": "Senior Quality Manager",
+  "department": "Quality Assurance",
+  "communicationLanguage": "English",
+  "portalLanguage": "en",
+  "preferences": {
+    "timeZone": "America/New_York",
+    "dateFormat": "MM/dd/yyyy",
+    "currency": "USD",
+    "notifications": {
+      "email": true,
+      "browser": false,
+      "mobile": true
+    }
+  },
+  "modifiedBy": 15
+}
+```
+
+## POST /api/users/change-password - Change User Password
+
+### Request Payload
+```json
+{
+  "userId": 15,
+  "currentPassword": "OldPassword123!",
+  "newPassword": "NewSecurePassword456!",
+  "confirmNewPassword": "NewSecurePassword456!"
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "passwordChanged": true,
+    "passwordChangeDate": "2025-09-19T10:00:00Z",
+    "nextExpiryDate": "2025-12-19T10:00:00Z"
+  },
+  "isSuccess": true,
+  "message": "Password changed successfully",
+  "errorCode": null
+}
+```
+
+# Original GraphQL Documentation
+
+contactservice-dev
+Payload
+-------
+{"operationName":"UserProfile","variables":{},"query":"query UserProfile {\n  userProfile {\n    data {\n      firstName\n      lastName\n      displayName\n      country\n      countryCode\n      region\n      email\n      phone\n      communicationLanguage\n      jobTitle\n      portalLanguage\n      veracityId\n      accessLevel {\n        roleLevel\n        roleName\n        __typename\n      }\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+
+Response
+--------
+
+{
+    "data": {
+        "userProfile": {
+            "data": {
+                "firstName": "Customerportal",
+                "lastName": "user0",
+                "displayName": "Customerportal user0",
+                "country": "USA",
+                "countryCode": "US",
+                "region": "",
+                "email": "Customerportal.user0@gmail.com",
+                "phone": null,
+                "communicationLanguage": "Italian",
+                "jobTitle": "Owner",
+                "portalLanguage": "en",
+                "veracityId": "ff145f9e-96d7-41ca-ad28-25cd3d2acb97",
+                "accessLevel": [
+                    {
+                        "roleLevel": [
+                            1,
+                            2
+                        ],
+                        "roleName": "Audits ",
+                        "__typename": "AccessRoleDetail"
+                    },
+                    {
+                        "roleLevel": [
+                            1,
+                            2
+                        ],
+                        "roleName": "Certificates ",
+                        "__typename": "AccessRoleDetail"
+                    },
+                    {
+                        "roleLevel": [
+                            1,
+                            2
+                        ],
+                        "roleName": "Contracts ",
+                        "__typename": "AccessRoleDetail"
+                    },
+                    {
+                        "roleLevel": [
+                            2
+                        ],
+                        "roleName": "Financials ",
+                        "__typename": "AccessRoleDetail"
+                    },
+                    {
+                        "roleLevel": [
+                            2,
+                            3
+                        ],
+                        "roleName": "Findings ",
+                        "__typename": "AccessRoleDetail"
+                    },
+                    {
+                        "roleLevel": [
+                            1,
+                            2
+                        ],
+                        "roleName": "Schedule ",
+                        "__typename": "AccessRoleDetail"
+                    }
+                ],
+                "__typename": "UserProfileDetailsResponse"
+            },
+            "isSuccess": true,
+            "message": "Profile retrieved successfully.",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfUserProfileDetailsResponse"
+        }
+    }
+}

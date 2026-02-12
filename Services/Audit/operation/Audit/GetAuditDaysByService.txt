@@ -1,0 +1,384 @@
+ba-scecp-r2-auditservice-dev
+Payload
+-----------
+{"operationName":"GetAuditDaysByService","variables":{"filters":{"startDate":"2025-01-01T00:00:00.000Z","endDate":"2025-12-31T23:59:59.999Z","companies":[],"services":[],"sites":[]}},"query":"query GetAuditDaysByService($filters: AuditDaysbyServicePieChartFiltersInput) {\n  auditDaysbyServicePieChart(filters: $filters) {\n    data {\n      pieChartData {\n        auditDays\n        auditpercentage\n        serviceName\n        __typename\n      }\n      totalServiceAuditsDayCount\n      __typename\n    }\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+
+Response:
+-----------------
+
+{
+    "data": {
+        "auditDaysbyServicePieChart": {
+            "data": {
+                "pieChartData": [
+                    {
+                        "auditDays": 0.25,
+                        "auditpercentage": 0,
+                        "serviceName": "Costco Assessment",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.00,
+                        "auditpercentage": 0,
+                        "serviceName": "EMAS III",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 4.75,
+                        "auditpercentage": 0,
+                        "serviceName": "EU ETS",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 0.50,
+                        "auditpercentage": 0,
+                        "serviceName": "FSC-STD-40-003 V2-1 Multi-Site CoC",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 3.75,
+                        "auditpercentage": 0,
+                        "serviceName": "FSC-STD-40-004 V3-1 Chain of Custody Certification",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 0.50,
+                        "auditpercentage": 0,
+                        "serviceName": "FSC-STD-40-007 V2-0 Sourcing Reclaimed Materials",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 56.00,
+                        "auditpercentage": 3,
+                        "serviceName": "FSSC 22000 V6.0 - ISO/TS 22002-1:2009 (Food)",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 5.00,
+                        "auditpercentage": 0,
+                        "serviceName": "FSSC 22000 V6.0 - ISO/TS 22002-5: 2019 (Transport & Storage)",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.50,
+                        "auditpercentage": 0,
+                        "serviceName": "FSSC 22000 V6.0 - ISO/TS 22002-6:2016 (Feed)",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.50,
+                        "auditpercentage": 0,
+                        "serviceName": "FSSC 22000 V6.0 (Trading)",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 4.50,
+                        "auditpercentage": 0,
+                        "serviceName": "GLOBAL STANDARD FOOD SAFETY Issue 9: August 2022",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.50,
+                        "auditpercentage": 0,
+                        "serviceName": "GLOBAL STANDARD FOR AGENTS AND BROKERS Issue 3: October 2021",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.25,
+                        "auditpercentage": 0,
+                        "serviceName": "GLOBAL STANDARD FOR STORAGE AND DISTRIBUTION Issue 4: November 2020",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 0.38,
+                        "auditpercentage": 0,
+                        "serviceName": "GLOBAL STANDARD FOR STORAGE AND DISTRIBUTION MODULE - 10.3 Other wholesale operations",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.63,
+                        "auditpercentage": 0,
+                        "serviceName": "GMP+ Feed Certification scheme 2020",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.75,
+                        "auditpercentage": 0,
+                        "serviceName": "HACCP",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 60.13,
+                        "auditpercentage": 3,
+                        "serviceName": "IATF 16949:2016",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.50,
+                        "auditpercentage": 0,
+                        "serviceName": "IATF 16949:2016 (Support Site)",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 4.13,
+                        "auditpercentage": 0,
+                        "serviceName": "IFS Food version 8 April 2023",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.00,
+                        "auditpercentage": 0,
+                        "serviceName": "IFS Logistics Version 3 December 2023",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.00,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 10006:2017",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 462.42,
+                        "auditpercentage": 23,
+                        "serviceName": "ISO 14001:2015",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.00,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 18295-1:2017",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.50,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 20121:2012",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 4.50,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 22000:2018",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 18.50,
+                        "auditpercentage": 1,
+                        "serviceName": "ISO 22005:2007",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 3.00,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 22301:2019",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.00,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 29001:2020",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.50,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 30415:2021",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 40.50,
+                        "auditpercentage": 2,
+                        "serviceName": "ISO 37001:2016",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 4.00,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO 44001:2017",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 527.38,
+                        "auditpercentage": 26,
+                        "serviceName": "ISO 45001:2018",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 169.88,
+                        "auditpercentage": 8,
+                        "serviceName": "ISO 50001:2018",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 17.00,
+                        "auditpercentage": 1,
+                        "serviceName": "ISO 55001:2014",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 358.00,
+                        "auditpercentage": 18,
+                        "serviceName": "ISO 9001:2015",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 3.50,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO/IEC 20000-1:2018",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 103.50,
+                        "auditpercentage": 5,
+                        "serviceName": "ISO/IEC 27001:2022",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.00,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO/IEC 27017:2015",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.00,
+                        "auditpercentage": 0,
+                        "serviceName": "ISO/IEC 27018:2019",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.00,
+                        "auditpercentage": 0,
+                        "serviceName": "Marchio QC",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.00,
+                        "auditpercentage": 0,
+                        "serviceName": "McCormick supplier addendum audit",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 3.50,
+                        "auditpercentage": 0,
+                        "serviceName": "McDonalds SQMS  - Full Audit",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 0.75,
+                        "auditpercentage": 0,
+                        "serviceName": "PEFC ST 2002:2020, PEFC ST 2001:2020",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 0.50,
+                        "auditpercentage": 0,
+                        "serviceName": "Regolamento di esecuzione (UE) 2015/2067",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.25,
+                        "auditpercentage": 0,
+                        "serviceName": "RSPO SCCS February 2020",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 22.75,
+                        "auditpercentage": 1,
+                        "serviceName": "SA 8000:2014",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 5.50,
+                        "auditpercentage": 0,
+                        "serviceName": "Safety Schemes in Procurement (SSIP)",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 1.20,
+                        "auditpercentage": 0,
+                        "serviceName": "SOLAS",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 0.25,
+                        "auditpercentage": 0,
+                        "serviceName": "SQF Food Safety Code: Animal Product Manufacturing, Edition 9",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 61.75,
+                        "auditpercentage": 3,
+                        "serviceName": "SQF Food Safety Code: Food Manufacturing, Edition 9",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 9.25,
+                        "auditpercentage": 0,
+                        "serviceName": "SQF Quality Code, Edition 9",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 8.00,
+                        "auditpercentage": 0,
+                        "serviceName": "STP - FOOD 77",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 3.50,
+                        "auditpercentage": 0,
+                        "serviceName": "TAPA FSR 2023 - Facility Security Requirements",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 0.00,
+                        "auditpercentage": 0,
+                        "serviceName": "TAPA TSR 2023 - Trucking Security Requirements",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.50,
+                        "auditpercentage": 0,
+                        "serviceName": "TickITplus Foundation",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 3.00,
+                        "auditpercentage": 0,
+                        "serviceName": "TISAX (AL3) VDA 6",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.50,
+                        "auditpercentage": 0,
+                        "serviceName": "UK ETS",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 2.00,
+                        "auditpercentage": 0,
+                        "serviceName": "UNI 11233:2009",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 3.00,
+                        "auditpercentage": 0,
+                        "serviceName": "UNI CEI 11352 (ESCO)",
+                        "__typename": "AuditDaysByServicePiechart"
+                    },
+                    {
+                        "auditDays": 13.00,
+                        "auditpercentage": 1,
+                        "serviceName": "UNI/PdR 125:2022",
+                        "__typename": "AuditDaysByServicePiechart"
+                    }
+                ],
+                "totalServiceAuditsDayCount": 2024.90,
+                "__typename": "AuditDaysByServicesData"
+            },
+            "errorCode": "",
+            "isSuccess": true,
+            "message": "",
+            "__typename": "BaseGraphResponseOfAuditDaysByServicesData"
+        }
+    }
+}

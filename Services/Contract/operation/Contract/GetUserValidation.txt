@@ -1,0 +1,186 @@
+# REST API JSON Payload Documentation
+
+## GET /api/users/validate - Validate User Authentication
+
+### Request Payload (Headers)
+```json
+{
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+  "X-Veracity-ID": "ff145f9e-96d7-41ca-ad28-25cd3d2acb97"
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "userId": 15,
+    "userIsActive": true,
+    "userEmail": "Customerportal.user0@gmail.com",
+    "veracityId": "ff145f9e-96d7-41ca-ad28-25cd3d2acb97",
+    "portalLanguage": "en",
+    "isAdmin": true,
+    "isDnvUser": false,
+    "accountStatus": "Active",
+    "termsAcceptanceRedirectUrl": "",
+    "policySubCode": null,
+    "lastLoginDate": "2025-09-19T08:30:00Z",
+    "sessionInfo": {
+      "sessionId": "sess_abc123",
+      "sessionExpiry": "2025-09-19T18:30:00Z",
+      "ipAddress": "192.168.1.100",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    },
+    "permissions": [
+      "audit.read",
+      "audit.create",
+      "certificate.read",
+      "contract.read",
+      "settings.manage",
+      "users.manage"
+    ],
+    "rolePermissions": [
+      {
+        "roleId": 1,
+        "roleName": "System Administrator",
+        "permissions": ["*"]
+      }
+    ],
+    "companyAccess": [
+      {
+        "companyId": 377,
+        "companyName": "Britvic Ltd",
+        "accessLevel": "Full"
+      }
+    ],
+    "securityValidation": {
+      "passwordValid": true,
+      "twoFactorRequired": false,
+      "accountLocked": false,
+      "passwordExpiringSoon": false,
+      "daysUntilPasswordExpiry": 45
+    },
+    "validationTimestamp": "2025-09-19T10:00:00Z"
+  },
+  "isSuccess": true,
+  "message": "User validation successful",
+  "errorCode": null
+}
+```
+
+### Error Response Payload
+```json
+{
+  "data": null,
+  "isSuccess": false,
+  "message": "Invalid or expired token",
+  "errorCode": "INVALID_TOKEN"
+}
+```
+
+## POST /api/users/login - User Login
+
+### Request Payload
+```json
+{
+  "email": "Customerportal.user0@gmail.com",
+  "password": "SecurePassword123!",
+  "rememberMe": true,
+  "clientInfo": {
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    "ipAddress": "192.168.1.100",
+    "deviceType": "Desktop"
+  }
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+    "refreshToken": "def50200a8f3b2c1d4e5f6a7b8c9d0e1f2a3b4c5...",
+    "tokenType": "Bearer",
+    "expiresIn": 3600,
+    "refreshExpiresIn": 2592000,
+    "user": {
+      "userId": 15,
+      "email": "Customerportal.user0@gmail.com",
+      "firstName": "Customerportal",
+      "lastName": "user0",
+      "displayName": "Customerportal user0",
+      "veracityId": "ff145f9e-96d7-41ca-ad28-25cd3d2acb97",
+      "isAdmin": true,
+      "portalLanguage": "en",
+      "userIsActive": true,
+      "lastLoginDate": "2025-09-19T10:00:00Z"
+    },
+    "sessionInfo": {
+      "sessionId": "sess_new123",
+      "sessionExpiry": "2025-09-19T19:00:00Z"
+    },
+    "requiresPasswordChange": false,
+    "termsAcceptanceRequired": false
+  },
+  "isSuccess": true,
+  "message": "Login successful",
+  "errorCode": null
+}
+```
+
+## POST /api/users/logout - User Logout
+
+### Request Payload
+```json
+{
+  "sessionId": "sess_abc123",
+  "refreshToken": "def50200a8f3b2c1d4e5f6a7b8c9d0e1f2a3b4c5...",
+  "logoutReason": "User initiated"
+}
+```
+
+### Success Response Payload
+```json
+{
+  "data": {
+    "loggedOut": true,
+    "sessionTerminated": true,
+    "logoutTimestamp": "2025-09-19T10:00:00Z"
+  },
+  "isSuccess": true,
+  "message": "Logout successful",
+  "errorCode": null
+}
+```
+
+# Original GraphQL Documentation
+
+contactservice-dev
+
+Payload
+--------
+{"operationName":"GetUserValidation","variables":{},"query":"query GetUserValidation {\n  validateUser {\n    data {\n      userIsActive\n      termsAcceptanceRedirectUrl\n      policySubCode\n      isDnvUser\n      userEmail\n      veracityId\n      portalLanguage\n      isAdmin\n      __typename\n    }\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+
+Response
+--------
+{
+    "data": {
+        "validateUser": {
+            "data": {
+                "userIsActive": true,
+                "termsAcceptanceRedirectUrl": "",
+                "policySubCode": null,
+                "isDnvUser": false,
+                "userEmail": "Customerportal.user0@gmail.com",
+                "veracityId": "ff145f9e-96d7-41ca-ad28-25cd3d2acb97",
+                "portalLanguage": "en",
+                "isAdmin": true,
+                "__typename": "UserValidationResponse"
+            },
+            "errorCode": "",
+            "isSuccess": true,
+            "message": "Status fetched successfully",
+            "__typename": "BaseGraphResponseOfUserValidationResponse"
+        }
+    }
+}

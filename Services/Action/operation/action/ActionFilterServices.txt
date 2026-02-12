@@ -1,0 +1,73 @@
+notificationservice-dev
+payload
+----------
+{"operationName":"ActionFilterServices","variables":{"companies":[],"categories":[],"sites":[]},"query":"query ActionFilterServices($companies: [Int!], $categories: [Int!], $sites: [Int!]) {\n  actionServicesFilter(\n    companies: $companies\n    categories: $categories\n    sites: $sites\n  ) {\n    data {\n      id\n      label\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+---------
+{
+    "data": {
+        "actionServicesFilter": {
+            "data": [
+                {
+                    "id": 162,
+                    "label": "ISO 20121:2012",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 780,
+                    "label": "ISO 9001:2015",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 1060,
+                    "label": "ISO 14001:2015",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 1184,
+                    "label": "ISO 45001:2018",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 1389,
+                    "label": "SA 8000:2014",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 1867,
+                    "label": "GLOBAL STANDARD FOR STORAGE AND DISTRIBUTION Issue 4: November 2020",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 1887,
+                    "label": "SQF Food Safety Code: Food Manufacturing, Edition 9",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 1899,
+                    "label": "SQF Quality Code, Edition 9",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 2055,
+                    "label": "IFS Logistics Version 3 December 2023",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 2137,
+                    "label": "FSC-STD-40-004 V3-1 Chain of Custody Certification",
+                    "__typename": "ActionServiceFilterResponse"
+                },
+                {
+                    "id": 2155,
+                    "label": "ISO 50001:2018",
+                    "__typename": "ActionServiceFilterResponse"
+                }
+            ],
+            "isSuccess": true,
+            "message": "Success",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfListOfActionServiceFilterResponse"
+        }
+    }
+}

@@ -1,0 +1,1792 @@
+notificationservice-dev
+payload
+-----
+{"operationName":"NotificationFilterCategories","variables":{"companies":[],"services":[],"sites":[]},"query":"query NotificationFilterCategories($companies: [Int!], $services: [Int!], $sites: [Int!]) {\n  categoriesFilter(companies: $companies, services: $services, sites: $sites) {\n    data {\n      id\n      label\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "categoriesFilter": {
+            "data": [
+                {
+                    "id": 2,
+                    "label": "Certificates",
+                    "__typename": "CategoryFilterResponse"
+                },
+                {
+                    "id": 4,
+                    "label": "Schedule",
+                    "__typename": "CategoryFilterResponse"
+                }
+            ],
+            "isSuccess": true,
+            "message": "Success",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfIEnumerableOfCategoryFilterResponse"
+        }
+    }
+}
+
+notificationservice-dev
+payload
+-----
+{"operationName":"NotificationFilterservices","variables":{"categories":[],"companies":[],"sites":[]},"query":"query NotificationFilterservices($companies: [Int!], $categories: [Int!], $sites: [Int!]) {\n  servicesFilter(companies: $companies, categories: $categories, sites: $sites) {\n    data {\n      id\n      label\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "servicesFilter": {
+            "data": [
+                {
+                    "id": 162,
+                    "label": "ISO 20121:2012",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 780,
+                    "label": "ISO 9001:2015",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1060,
+                    "label": "ISO 14001:2015",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1184,
+                    "label": "ISO 45001:2018",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1389,
+                    "label": "SA 8000:2014",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1867,
+                    "label": "GLOBAL STANDARD FOR STORAGE AND DISTRIBUTION Issue 4: November 2020",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1877,
+                    "label": "FSSC 22000 V5.1 - ISO TS 22002-1:2009 (Food)",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1887,
+                    "label": "SQF Food Safety Code: Food Manufacturing, Edition 9",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1899,
+                    "label": "SQF Quality Code, Edition 9",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 1957,
+                    "label": "GLOBAL STANDARD FOOD SAFETY Issue 9: August 2022",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 2018,
+                    "label": "IFS Food version 8 April 2023",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 2023,
+                    "label": "FSSC 22000 V6.0 - ISO/TS 22002-1:2009 (Food)",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 2055,
+                    "label": "IFS Logistics Version 3 December 2023",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 2060,
+                    "label": "McCormick supplier addendum audit",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 2155,
+                    "label": "ISO 50001:2018",
+                    "__typename": "ServiceFilterResponse"
+                },
+                {
+                    "id": 2514,
+                    "label": "EU ETS",
+                    "__typename": "ServiceFilterResponse"
+                }
+            ],
+            "isSuccess": true,
+            "message": "Success",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfIEnumerableOfServiceFilterResponse"
+        }
+    }
+}
+
+notificationservice-dev
+payload
+-----
+{"operationName":"NotificationFilterCompanies","variables":{"categories":[],"services":[],"sites":[]},"query":"query NotificationFilterCompanies($categories: [Int!], $services: [Int!], $sites: [Int!]) {\n  companiesFilter(categories: $categories, services: $services, sites: $sites) {\n    data {\n      id\n      label\n      __typename\n    }\n    isSuccess\n    message\n    errorCode\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "companiesFilter": {
+            "data": [
+                {
+                    "id": 384,
+                    "label": "ZANINI PORTE SPA",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 444,
+                    "label": "BRUNI GLASS SPA",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 364,
+                    "label": "MALAYSIAN AUTOMOTIVE LIGHTING SDN BHD",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 341,
+                    "label": "FAVINI S.r.l.",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 353,
+                    "label": "UNILEVER ITALIA MANUFACTURING  SRL",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 453,
+                    "label": "ISS World Services A/S",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 468,
+                    "label": "Asbestos Compliance Solutions Ltd",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 413,
+                    "label": "BARILLA G. e R. FRATELLI  SOCIETA' PER AZIONI",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 451,
+                    "label": "Magneti Marelli Sistemas de Suspensión Promatcor Mexicana S de RL de CV",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 377,
+                    "label": "Britvic Soft Drinks Ltd",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 477,
+                    "label": "UK POWER NETWORKS (OPERATIONS) LIMITED",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 463,
+                    "label": "Marelli Toluca México S. de R.L de C.V ",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 478,
+                    "label": "Freni Brembo S.p.A.",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 409,
+                    "label": "MUTTI SPA",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 466,
+                    "label": "Sarval Limited",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 209597,
+                    "label": "Kerry",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 366,
+                    "label": "Ducati Motor Holding S.p.A.",
+                    "__typename": "CompaniesFilterResponse"
+                },
+                {
+                    "id": 486,
+                    "label": "Mott MacDonald Limited",
+                    "__typename": "CompaniesFilterResponse"
+                }
+            ],
+            "isSuccess": true,
+            "message": "Success",
+            "errorCode": "",
+            "__typename": "BaseGraphResponseOfIEnumerableOfCompaniesFilterResponse"
+        }
+    }
+}
+
+notificationservice-dev
+payload
+-----
+{"operationName":"NotificationFilterSites","variables":{"companies":[],"categories":[],"services":[]},"query":"query NotificationFilterSites($companies: [Int!], $categories: [Int!], $services: [Int!]) {\n  sitesFilter(companies: $companies, categories: $categories, services: $services) {\n    data {\n      id\n      label\n      children {\n        id\n        label\n        children {\n          id\n          label\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+
+response
+--------
+{
+    "data": {
+        "sitesFilter": {
+            "data": [
+                {
+                    "id": 285,
+                    "label": "Brazil",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Betim",
+                            "children": [
+                                {
+                                    "id": 172419,
+                                    "label": "Brembo Do Brasil Ltda – Betim",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 293,
+                    "label": "Canada",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": " Woodstock",
+                            "children": [
+                                {
+                                    "id": 187894,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Brampton",
+                            "children": [
+                                {
+                                    "id": 179733,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Delta",
+                            "children": [
+                                {
+                                    "id": 179737,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Sainte-Claire",
+                            "children": [
+                                {
+                                    "id": 179731,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Woodstock",
+                            "children": [
+                                {
+                                    "id": 179750,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 357,
+                    "label": "Italy",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Bergamo",
+                            "children": [
+                                {
+                                    "id": 310405,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173050,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172318,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 171196,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Bologna",
+                            "children": [
+                                {
+                                    "id": 173070,
+                                    "label": "Ducati Motor Holding S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172091,
+                                    "label": "Ducati Motor Holding S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172089,
+                                    "label": "Ducati Motor Holding S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Caivano",
+                            "children": [
+                                {
+                                    "id": 172428,
+                                    "label": "UNILEVER ITALIA MANUFACTURING S.r.l.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Capriate S. Gervasio",
+                            "children": [
+                                {
+                                    "id": 172320,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Cernusco sul Naviglio",
+                            "children": [
+                                {
+                                    "id": 298125,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298124,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Cittaducale",
+                            "children": [
+                                {
+                                    "id": 298112,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Collecchio",
+                            "children": [
+                                {
+                                    "id": 173051,
+                                    "label": "MUTTI S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173048,
+                                    "label": "MUTTI S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Colognola ai Colli ",
+                            "children": [
+                                {
+                                    "id": 172185,
+                                    "label": "Zanini S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Corbiolo di Bosco Chiesanuova",
+                            "children": [
+                                {
+                                    "id": 171268,
+                                    "label": "Zanini S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Curno",
+                            "children": [
+                                {
+                                    "id": 182430,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 171193,
+                                    "label": "Brembo N.V. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172208,
+                                    "label": "Brembo N.V. Performance Curno",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Mapello",
+                            "children": [
+                                {
+                                    "id": 255303,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172321,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Milano",
+                            "children": [
+                                {
+                                    "id": 298118,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298117,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298109,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 214724,
+                                    "label": "ISS FACILITY SERVICES S.r.l.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 171963,
+                                    "label": "ISS Facility Services S.r.l.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298119,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298120,
+                                    "label": "ISS FACILITY SERVICES S.r.l.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298121,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298122,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298123,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 309173,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 309174,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 309175,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 309176,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 309177,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 309178,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Montechiarugolo",
+                            "children": [
+                                {
+                                    "id": 172361,
+                                    "label": "MUTTI S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173167,
+                                    "label": "MUTTI S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173168,
+                                    "label": "MUTTI S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Novara",
+                            "children": [
+                                {
+                                    "id": 298114,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Oliveto Citra",
+                            "children": [
+                                {
+                                    "id": 310353,
+                                    "label": "MUTTI S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Omegna",
+                            "children": [
+                                {
+                                    "id": 172388,
+                                    "label": "FAVINI S.r.l.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Parma",
+                            "children": [
+                                {
+                                    "id": 173574,
+                                    "label": "Barilla G. e R. Fratelli Società per Azioni",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Pisa",
+                            "children": [
+                                {
+                                    "id": 298113,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Roma",
+                            "children": [
+                                {
+                                    "id": 298110,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 298111,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "ROSSANO VENETO",
+                            "children": [
+                                {
+                                    "id": 172001,
+                                    "label": "FAVINI S.r.l.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Rossano Veneto",
+                            "children": [
+                                {
+                                    "id": 172389,
+                                    "label": "FAVINI S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Stezzano",
+                            "children": [
+                                {
+                                    "id": 172319,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172427,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173216,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173502,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 174053,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 179896,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 179897,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 181893,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 182164,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 182413,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 252956,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 255361,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 255471,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 288621,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 296894,
+                                    "label": "Brembo N.V.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Trezzano Sul Naviglio",
+                            "children": [
+                                {
+                                    "id": 172212,
+                                    "label": "BERLIN PACKAGING ITALY S.p.A. Hq Trezzano  ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "VALSAMOGGIA",
+                            "children": [
+                                {
+                                    "id": 172294,
+                                    "label": "Ducati Motor Holding S.p.A.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Valsamoggia",
+                            "children": [
+                                {
+                                    "id": 298115,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Zola Pedrosa ",
+                            "children": [
+                                {
+                                    "id": 298116,
+                                    "label": "ISS FACILITY SERVICES S.r.l. ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 359,
+                    "label": "Japan",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Tokyo",
+                            "children": [
+                                {
+                                    "id": 310656,
+                                    "label": "Mott MacDonald Japan KK. (Tokyo)",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 377,
+                    "label": "Malaysia",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Simpang Ampat,",
+                            "children": [
+                                {
+                                    "id": 171145,
+                                    "label": "Marelli Automotive Lighting Malaysia Sdn. Bhd. (Formerly known as Malaysian Automotive Lighting Sdn. Bhd.)",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 386,
+                    "label": "Mexico",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Saltillo",
+                            "children": [
+                                {
+                                    "id": 171568,
+                                    "label": "Marelli Ride Dynamics S. de R.L. de C.V.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172894,
+                                    "label": "Marelli Toluca México S. de R.L. de C.V",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "SALTILLO",
+                            "children": [
+                                {
+                                    "id": 173563,
+                                    "label": "Marelli Ride Dynamics S. de R.L. de C.V.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 443,
+                    "label": "Spain",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Sant Cugat del Vallès",
+                            "children": [
+                                {
+                                    "id": 173378,
+                                    "label": "JJuan Brake Systems",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172860,
+                                    "label": "JJuan Brake Systems",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 462,
+                    "label": "Türkiye",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Istanbul",
+                            "children": [
+                                {
+                                    "id": 310688,
+                                    "label": "Mott MacDonald (Istanbul)",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 468,
+                    "label": "United Arab Emirates",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Dubai",
+                            "children": [
+                                {
+                                    "id": 310583,
+                                    "label": "Mott MacDonald Limited (Dubai)",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 469,
+                    "label": "United Kingdom",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": " Newbridge, Midlothian, Scotland",
+                            "children": [
+                                {
+                                    "id": 172907,
+                                    "label": "BERLIN PACKAGING UK Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 172356,
+                                    "label": "BERLIN PACKAGING UK Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Doncaster",
+                            "children": [
+                                {
+                                    "id": 171998,
+                                    "label": "Sarval Limited",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Hadleigh",
+                            "children": [
+                                {
+                                    "id": 173409,
+                                    "label": "BERLIN PACKAGING UK Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173034,
+                                    "label": "Berlin Packaging UK Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 173622,
+                                    "label": "Lady Lane, Hadleigh, IP7 6BQ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Ipswich",
+                            "children": [
+                                {
+                                    "id": 173526,
+                                    "label": "BERLIN PACKAGING UK Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "London",
+                            "children": [
+                                {
+                                    "id": 172561,
+                                    "label": "UK Power Networks",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Mansfield ",
+                            "children": [
+                                {
+                                    "id": 171978,
+                                    "label": "Asbestos Compliance Solutions Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "NEWBRIDGE",
+                            "children": [
+                                {
+                                    "id": 173047,
+                                    "label": "Berlin Packaging UK Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Newbrigde ",
+                            "children": [
+                                {
+                                    "id": 172349,
+                                    "label": "Berlin Packaging UK Ltd",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Nottingham",
+                            "children": [
+                                {
+                                    "id": 171967,
+                                    "label": "Sarval Limited",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Rugby",
+                            "children": [
+                                {
+                                    "id": 171912,
+                                    "label": "Britvic Ltd [Rugby]",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                },
+                {
+                    "id": 255,
+                    "label": "USA",
+                    "children": [
+                        {
+                            "id": 1,
+                            "label": "Albany",
+                            "children": [
+                                {
+                                    "id": 186183,
+                                    "label": "Kerry ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Alton",
+                            "children": [
+                                {
+                                    "id": 184940,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Avon",
+                            "children": [
+                                {
+                                    "id": 254028,
+                                    "label": "BARILLA AMERICA N.Y. INC",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 310715,
+                                    "label": "BARILLA AMERICA N.Y. INC",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Beloit",
+                            "children": [
+                                {
+                                    "id": 179727,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 186180,
+                                    "label": "Kerry Inc. ",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 188390,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Blue Earth",
+                            "children": [
+                                {
+                                    "id": 179732,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Byesville",
+                            "children": [
+                                {
+                                    "id": 179757,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Calhoun",
+                            "children": [
+                                {
+                                    "id": 179734,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Chicago",
+                            "children": [
+                                {
+                                    "id": 184938,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Clark",
+                            "children": [
+                                {
+                                    "id": 179735,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 179756,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 184447,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Evansville",
+                            "children": [
+                                {
+                                    "id": 179728,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Fort Worth",
+                            "children": [
+                                {
+                                    "id": 179755,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Greenville",
+                            "children": [
+                                {
+                                    "id": 179751,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Harrisonburg",
+                            "children": [
+                                {
+                                    "id": 182398,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Hot Springs",
+                            "children": [
+                                {
+                                    "id": 182397,
+                                    "label": "Kerry ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Jackson",
+                            "children": [
+                                {
+                                    "id": 179729,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Lakeland",
+                            "children": [
+                                {
+                                    "id": 179739,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Manitowoc",
+                            "children": [
+                                {
+                                    "id": 179753,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 179754,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 183450,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Melrose Park",
+                            "children": [
+                                {
+                                    "id": 179740,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 185069,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Montebello",
+                            "children": [
+                                {
+                                    "id": 184939,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Montgomery",
+                            "children": [
+                                {
+                                    "id": 184941,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "New Century",
+                            "children": [
+                                {
+                                    "id": 182215,
+                                    "label": "Kerry ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Nixa",
+                            "children": [
+                                {
+                                    "id": 184936,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "North Rose",
+                            "children": [
+                                {
+                                    "id": 184937,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Norwich",
+                            "children": [
+                                {
+                                    "id": 180066,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 186869,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                },
+                                {
+                                    "id": 179742,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Olney",
+                            "children": [
+                                {
+                                    "id": 184942,
+                                    "label": "Kerry ",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Owatonna",
+                            "children": [
+                                {
+                                    "id": 179752,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Owen",
+                            "children": [
+                                {
+                                    "id": 179743,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Plant City",
+                            "children": [
+                                {
+                                    "id": 179744,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Portland",
+                            "children": [
+                                {
+                                    "id": 179745,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Rhinelander",
+                            "children": [
+                                {
+                                    "id": 182752,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Rome",
+                            "children": [
+                                {
+                                    "id": 184475,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Rothschild",
+                            "children": [
+                                {
+                                    "id": 182751,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Seattle",
+                            "children": [
+                                {
+                                    "id": 179746,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Springfield ",
+                            "children": [
+                                {
+                                    "id": 183579,
+                                    "label": "Kerry",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Vesper",
+                            "children": [
+                                {
+                                    "id": 179748,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        },
+                        {
+                            "id": 1,
+                            "label": "Vinton",
+                            "children": [
+                                {
+                                    "id": 179749,
+                                    "label": "Kerry Inc.",
+                                    "__typename": "SiteFilterResponse"
+                                }
+                            ],
+                            "__typename": "SiteFilterResponse"
+                        }
+                    ],
+                    "__typename": "SiteFilterResponse"
+                }
+            ],
+            "errorCode": "",
+            "isSuccess": true,
+            "message": "Success",
+            "__typename": "BaseGraphResponseOfIEnumerableOfSiteFilterResponse"
+        }
+    }
+}
+notificationservice-dev
+payload
+-----
+{"operationName":"Notifications","variables":{"category":[],"company":[],"service":[],"site":[],"pageNumber":1,"pageSize":10},"query":"query Notifications($category: [Int!], $company: [Int!], $service: [Int!], $site: [Int!], $pageNumber: Int!, $pageSize: Int!) {\n  notifications(\n    category: $category\n    company: $company\n    service: $service\n    site: $site\n    pageNumber: $pageNumber\n    pageSize: $pageSize\n  ) {\n    data {\n      currentPage\n      items {\n        createdTime\n        infoId\n        message\n        language\n        notificationCategory\n        readStatus\n        subject\n        entityType\n        entityId\n        snowLink\n        __typename\n      }\n      totalItems\n      totalPages\n      __typename\n    }\n    errorCode\n    isSuccess\n    message\n    __typename\n  }\n}"}
+response
+--------
+{
+    "data": {
+        "notifications": {
+            "data": {
+                "currentPage": 1,
+                "items": [
+                    {
+                        "createdTime": "2025-09-12T11:47:01.677Z",
+                        "infoId": 4253,
+                        "message": "<p>New request {CS0002713}created.<br><br>\r\n\tThank you for contacting us. Your request for {Schedule} has been successfully received and is being handled. We will follow up with you shortly.​<br> </p>",
+                        "language": "en",
+                        "notificationCategory": "New Request created",
+                        "readStatus": true,
+                        "subject": "Support request created",
+                        "entityType": "generic",
+                        "entityId": "0",
+                        "snowLink": "4d18be332b7b2a101450ff65d891bf78",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-11T17:31:36.213Z",
+                        "infoId": 4252,
+                        "message": "<p>New request {CS0002712}created.<br><br>\r\n\tThank you for contacting us. Your request for {Contract} has been successfully received and is being handled. We will follow up with you shortly.​<br> </p>",
+                        "language": "en",
+                        "notificationCategory": "New Request created",
+                        "readStatus": true,
+                        "subject": "Support request created",
+                        "entityType": "generic",
+                        "entityId": "0",
+                        "snowLink": "ea5d72672bf7e6101450ff65d891bf21",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-11T10:04:22.437Z",
+                        "infoId": 4249,
+                        "message": "<p>Request {CS0002711} closed<br>\r\n\t\tYour request {CS0002711} regarding {Add a New Site to existing Service} has been closed. If further support is needed related to this case, please open a new request.\r\n        </p>",
+                        "language": "en",
+                        "notificationCategory": "Request Closed by customer or automatically",
+                        "readStatus": true,
+                        "subject": "Support request closed",
+                        "entityType": "certificates",
+                        "entityId": "678603",
+                        "snowLink": "58f655eb3b77a6101cfcd2c5e4e45a23",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-11T10:04:12.800Z",
+                        "infoId": 4248,
+                        "message": "<p>New request {CS0002711}created.<br><br>\r\n\tThank you for contacting us. Your request for {Add a New Site to existing Service} has been successfully received and is being handled. We will follow up with you shortly.​<br> </p>",
+                        "language": "en",
+                        "notificationCategory": "New Request created",
+                        "readStatus": true,
+                        "subject": "Support request created",
+                        "entityType": "certificates",
+                        "entityId": "678603",
+                        "snowLink": "58f655eb3b77a6101cfcd2c5e4e45a23",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-11T10:02:29.813Z",
+                        "infoId": 4247,
+                        "message": "<p>Request {CS0002710} closed<br>\r\n\t\tYour request {CS0002710} regarding {Add a New Site to existing Service} has been closed. If further support is needed related to this case, please open a new request.\r\n        </p>",
+                        "language": "en",
+                        "notificationCategory": "Request Closed by customer or automatically",
+                        "readStatus": true,
+                        "subject": "Support request closed",
+                        "entityType": "certificates",
+                        "entityId": "782405",
+                        "snowLink": "6936d16b3b77a6101cfcd2c5e4e45ae3",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-11T10:01:02.837Z",
+                        "infoId": 4246,
+                        "message": "<p>New request {CS0002710}created.<br><br>\r\n\tThank you for contacting us. Your request for {Add a New Site to existing Service} has been successfully received and is being handled. We will follow up with you shortly.​<br> </p>",
+                        "language": "en",
+                        "notificationCategory": "New Request created",
+                        "readStatus": true,
+                        "subject": "Support request created",
+                        "entityType": "certificates",
+                        "entityId": "782405",
+                        "snowLink": "6936d16b3b77a6101cfcd2c5e4e45ae3",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-11T09:56:44.803Z",
+                        "infoId": 4245,
+                        "message": "<p>New request {CS0002708}created.<br><br>\r\n\tThank you for contacting us. Your request for {Add a New Site to existing Service} has been successfully received and is being handled. We will follow up with you shortly.​<br> </p>",
+                        "language": "en",
+                        "notificationCategory": "New Request created",
+                        "readStatus": false,
+                        "subject": "Support request created",
+                        "entityType": "certificates",
+                        "entityId": "675288",
+                        "snowLink": "a1355de73b77a6101cfcd2c5e4e45a53",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-10T11:00:00.273Z",
+                        "infoId": 4242,
+                        "message": "<p>La pianificazione prevista per il tuo prossimo <b>Periodic Audit; P1</b>, in accordo allo standard <b>ISO 9001:2015 || ISO 14001:2015 || ISO 45001:2018</b> è stata confermata con successo:<br>\r\n     <b>Sito: Asbestos Compliance Solutions Ltd</b>\r\n     <b>Data di inizio: 16-04-2026</b>\r\n     <b>Data di fine: 22-05-2026</b>\r\n     <b>Numero di giornate: 1</b><br>\r\n\t Grazie per la conferma, Siamo lieti di supportarti durante tutto il processo. Per maggiori informazioni, vai alla sezione Pianificazione.<br>\r\n     Per prepararti all'audit, puoi utilizzare <a href=\"https://boostmyaudit.dnv.com\" target=\"_blank\" style=\"color: #1a73e8; text-decoration: underline;\">Boost My Audit</a>, il nostro strumento digitale che ti aiuta ad analizzare le aree più critiche per i tuoi obiettivi aziendali.<br> \r\n     Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "notificationCategory": "Confirm to the user",
+                        "readStatus": false,
+                        "subject": "La tua pianificazione è confermata",
+                        "entityType": "Schedule",
+                        "entityId": "4390231",
+                        "snowLink": "",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-10T11:00:00.273Z",
+                        "infoId": 4243,
+                        "message": "<p>La pianificazione prevista per il tuo prossimo <b>Re-certification Audit</b>, in accordo allo standard <b>GLOBAL STANDARD FOOD SAFETY Issue 9: August 2022</b> è stata confermata con successo:<br>\r\n     <b>Sito: Kerry</b>\r\n     <b>Data di inizio: 05-01-2026</b>\r\n     <b>Data di fine: 07-01-2026</b>\r\n     <b>Numero di giornate: 3</b><br>\r\n\t Grazie per la conferma, Siamo lieti di supportarti durante tutto il processo. Per maggiori informazioni, vai alla sezione Pianificazione.<br>\r\n     Per prepararti all'audit, puoi utilizzare <a href=\"https://boostmyaudit.dnv.com\" target=\"_blank\" style=\"color: #1a73e8; text-decoration: underline;\">Boost My Audit</a>, il nostro strumento digitale che ti aiuta ad analizzare le aree più critiche per i tuoi obiettivi aziendali.<br> \r\n     Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "notificationCategory": "Confirm to the user",
+                        "readStatus": false,
+                        "subject": "La tua pianificazione è confermata",
+                        "entityType": "Schedule",
+                        "entityId": "4493724",
+                        "snowLink": "",
+                        "__typename": "GetNotificationList"
+                    },
+                    {
+                        "createdTime": "2025-09-10T07:00:00.367Z",
+                        "infoId": 4241,
+                        "message": "<p>La pianificazione per il tuo prossimo audit per l'azienda <b>Re-certification Audit</b>, in accordo allo standard <b>FSSC 22000 V6.0 - ISO/TS 22002-1:2009 (Food)</b> è auto confermata:<br>\r\n     <b>Sito: AGC Inc. Kashima Plant</b>\r\n     <b>Data di inizio: 18-12-2025</b>\r\n     <b>Data di fine: 21-01-2027</b>\r\n     <b>Numero di giornate: 2.5</b><br>\r\n     Grazie per la conferma, Siamo lieti di supportarti durante tutto il processo. Per maggiori informazioni, vai alla sezione Pianificazione.<br>\r\n\t Per prepararti all'audit, puoi utilizzare <a href=\"https://boostmyaudit.dnv.com\" target=\"_blank\" style=\"color: #1a73e8; text-decoration: underline;\">Boost My Audit</a>, il nostro strumento digitale che ti aiuta ad analizzare le aree più critiche per i tuoi obiettivi aziendali.<br> \r\n\t Per qualsiasi domanda, apri una richiesta nella sezione \"Supporto\" in alto sullo schermo.</p>",
+                        "language": "it",
+                        "notificationCategory": "Auto Confirm notification to the user",
+                        "readStatus": false,
+                        "subject": "La tua pianifiazione è auto confermata",
+                        "entityType": "Schedule",
+                        "entityId": "4296109",
+                        "snowLink": "",
+                        "__typename": "GetNotificationList"
+                    }
+                ],
+                "totalItems": 135,
+                "totalPages": 14,
+                "__typename": "NotificationPaginationResponse"
+            },
+            "errorCode": "",
+            "isSuccess": true,
+            "message": "",
+            "__typename": "BaseGraphResponseOfNotificationPaginationResponse"
+        }
+    }
+}
