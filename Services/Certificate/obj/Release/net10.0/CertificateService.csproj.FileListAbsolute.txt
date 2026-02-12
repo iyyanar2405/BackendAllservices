@@ -114,3 +114,5 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Certificate\obj\Release\net10.0\refint\
 D:\Dotnetfull_stack\BackEnd\src\Services\Certificate\obj\Release\net10.0\CertificateService.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Certificate\obj\Release\net10.0\CertificateService.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Certificate\obj\Release\net10.0\ref\CertificateService.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Certificate\bin\Release\net10.0\Polly.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Certificate\bin\Release\net10.0\Polly.Core.dll

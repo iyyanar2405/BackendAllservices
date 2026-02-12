@@ -2,6 +2,7 @@ using SettingsService.Data;
 using SettingsService.GraphQL.Queries;
 using SettingsService.Repositories;
 using SettingsService.Services;
+using Settings.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -17,6 +18,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<ISettingsRepository, SettingsRepository>();
 builder.Services.AddScoped<ISettingsService, SettingsService.Services.SettingsService>();
+
+// Add Resilience Policies
+builder.Services.AddResiliencePolicies();
+builder.Services.AddResilientHttpClient();
 
 builder.Services
     .AddGraphQLServer()

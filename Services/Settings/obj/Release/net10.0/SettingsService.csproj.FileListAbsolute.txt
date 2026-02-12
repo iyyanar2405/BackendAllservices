@@ -114,3 +114,5 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Settings\obj\Release\net10.0\refint\Set
 D:\Dotnetfull_stack\BackEnd\src\Services\Settings\obj\Release\net10.0\SettingsService.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Settings\obj\Release\net10.0\SettingsService.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Settings\obj\Release\net10.0\ref\SettingsService.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Settings\bin\Release\net10.0\Polly.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Settings\bin\Release\net10.0\Polly.Core.dll

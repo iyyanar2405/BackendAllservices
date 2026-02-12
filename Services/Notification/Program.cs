@@ -2,6 +2,7 @@ using NotificationService.Data;
 using NotificationService.GraphQL.Queries;
 using NotificationService.Repositories;
 using NotificationService.Services;
+using Notification.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -17,6 +18,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<INotificationService, NotificationService.Services.NotificationService>();
+
+// Add Resilience Policies
+builder.Services.AddResiliencePolicies();
+builder.Services.AddResilientHttpClient();
 
 builder.Services
     .AddGraphQLServer()

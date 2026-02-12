@@ -114,3 +114,5 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Notification\obj\Release\net10.0\refint
 D:\Dotnetfull_stack\BackEnd\src\Services\Notification\obj\Release\net10.0\NotificationService.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Notification\obj\Release\net10.0\NotificationService.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Notification\obj\Release\net10.0\ref\NotificationService.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Notification\bin\Release\net10.0\Polly.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Notification\bin\Release\net10.0\Polly.Core.dll

@@ -16,6 +16,52 @@
         <member name="M:ScheduleService.Migrations.InitialFromScripts.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:Schedule.Extensions.ResiliencePolicyExtensions">
+            <summary>
+            Extension methods for configuring resilience patterns using Polly
+            Implements Circuit Breaker and Retry patterns for fault tolerance
+            </summary>
+        </member>
+        <member name="M:Schedule.Extensions.ResiliencePolicyExtensions.AddResiliencePolicies(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds resilience policies for HTTP clients with Circuit Breaker and Retry patterns
+            </summary>
+        </member>
+        <member name="M:Schedule.Extensions.ResiliencePolicyExtensions.AddResilientHttpClient(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.String)">
+            <summary>
+            Configures HttpClientFactory with resilience policies
+            </summary>
+        </member>
+        <member name="M:Schedule.Extensions.ResiliencePolicyExtensions.GetRetryPolicy">
+            <summary>
+            Gets a retry policy with exponential backoff
+            </summary>
+        </member>
+        <member name="M:Schedule.Extensions.ResiliencePolicyExtensions.GetCircuitBreakerPolicy">
+            <summary>
+            Gets a circuit breaker policy
+            </summary>
+        </member>
+        <member name="T:Schedule.Extensions.ResilienceContext">
+            <summary>
+            Resilience context for tracking failures and circuit breaker state
+            </summary>
+        </member>
+        <member name="T:Schedule.Extensions.IResilienceMonitor">
+            <summary>
+            Service for monitoring resilience policies
+            </summary>
+        </member>
+        <member name="T:Schedule.Extensions.ResilienceMonitor">
+            <summary>
+            Implementation of resilience monitoring
+            </summary>
+        </member>
+        <member name="T:Schedule.Extensions.CircuitState">
+            <summary>
+            Circuit state enumeration
+            </summary>
+        </member>
         <member name="T:Program">
             <summary>
             Auto-generated public partial Program class for top-level statement apps.

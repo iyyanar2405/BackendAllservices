@@ -4,6 +4,7 @@ using CertificateService.Models;
 using CertificateService.Models.Rest;
 using GraphCertificateListResponse = CertificateService.Models.CertificateListResponse;
 using RestAdditionalScope = CertificateService.Models.Rest.CertificateAdditionalScope;
+using CertificateEntity = CertificateService.Data.Entities.Certificate;
 using Microsoft.EntityFrameworkCore;
 using ServiceEntity = CertificateService.Data.Entities.Service;
 
@@ -667,7 +668,7 @@ namespace CertificateService.Repositories
 
         private sealed class ListRow
         {
-            public Certificate Certificate { get; set; } = new();
+            public CertificateEntity Certificate { get; set; } = new();
             public string? CompanyName { get; set; }
             public string? CountryName { get; set; }
             public string? CountryCode { get; set; }
@@ -679,7 +680,7 @@ namespace CertificateService.Repositories
 
         private sealed class DetailRow
         {
-            public Certificate Certificate { get; set; } = new();
+            public CertificateEntity Certificate { get; set; } = new();
             public string? CompanyName { get; set; }
             public string? CountryCode { get; set; }
             public string? ContactPerson { get; set; }

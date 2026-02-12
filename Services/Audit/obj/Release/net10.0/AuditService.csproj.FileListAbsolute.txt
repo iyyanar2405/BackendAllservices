@@ -114,3 +114,5 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Audit\obj\Release\net10.0\refint\AuditS
 D:\Dotnetfull_stack\BackEnd\src\Services\Audit\obj\Release\net10.0\AuditService.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Audit\obj\Release\net10.0\AuditService.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Audit\obj\Release\net10.0\ref\AuditService.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Audit\bin\Release\net10.0\Polly.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Audit\bin\Release\net10.0\Polly.Core.dll

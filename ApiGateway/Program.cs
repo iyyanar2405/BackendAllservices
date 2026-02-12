@@ -1,6 +1,7 @@
 using Serilog;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Polly;
 using ApiGateway.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -42,8 +43,9 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
-// Add Ocelot
-builder.Services.AddOcelot(builder.Configuration);
+// Add Ocelot with Polly support for QoS
+builder.Services.AddOcelot(builder.Configuration).AddPolly();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>

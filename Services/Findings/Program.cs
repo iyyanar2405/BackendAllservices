@@ -1,6 +1,7 @@
 // Program.cs
 using FindingsAPI.Gateway;
 using FindingsAPI.Gateway.Data;
+using FindingsAPI.Gateway.Extensions;
 using FindingsAPI.Gateway.GraphQL;
 using FindingsAPI.Gateway.GraphQL.Middleware;
 using FindingsAPI.Gateway.GraphQL.Queries;
@@ -46,6 +47,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // Add Unit of Work
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+// Add Resilience Policies
+builder.Services.AddResiliencePolicies();
+builder.Services.AddResilientHttpClient();
 
 // GraphQL Server
 builder.Services

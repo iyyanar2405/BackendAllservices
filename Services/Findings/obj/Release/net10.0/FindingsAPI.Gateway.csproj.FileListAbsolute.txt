@@ -146,3 +146,4 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Findings\obj\Release\net10.0\refint\Fin
 D:\Dotnetfull_stack\BackEnd\src\Services\Findings\obj\Release\net10.0\FindingsAPI.Gateway.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Findings\obj\Release\net10.0\FindingsAPI.Gateway.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Findings\obj\Release\net10.0\ref\FindingsAPI.Gateway.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Findings\bin\Release\net10.0\Polly.Core.dll

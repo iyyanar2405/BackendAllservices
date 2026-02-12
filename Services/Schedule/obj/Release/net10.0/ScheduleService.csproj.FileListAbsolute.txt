@@ -114,3 +114,5 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Schedule\obj\Release\net10.0\refint\Sch
 D:\Dotnetfull_stack\BackEnd\src\Services\Schedule\obj\Release\net10.0\ScheduleService.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Schedule\obj\Release\net10.0\ScheduleService.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Schedule\obj\Release\net10.0\ref\ScheduleService.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Schedule\bin\Release\net10.0\Polly.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Schedule\bin\Release\net10.0\Polly.Core.dll

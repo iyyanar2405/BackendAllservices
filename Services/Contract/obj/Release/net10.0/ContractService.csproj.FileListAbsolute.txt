@@ -114,3 +114,5 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Contract\obj\Release\net10.0\refint\Con
 D:\Dotnetfull_stack\BackEnd\src\Services\Contract\obj\Release\net10.0\ContractService.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Contract\obj\Release\net10.0\ContractService.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Contract\obj\Release\net10.0\ref\ContractService.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Contract\bin\Release\net10.0\Polly.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Contract\bin\Release\net10.0\Polly.Core.dll

@@ -13,6 +13,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 100
       }
     },
     {
@@ -28,6 +35,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 50
       }
     },
     {
@@ -43,6 +57,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 80
       }
     },
     {
@@ -58,6 +79,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 40
       }
     },
     {
@@ -73,6 +101,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 75
       }
     },
     {
@@ -88,6 +123,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 35
       }
     },
     {
@@ -103,6 +145,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 60
       }
     },
     {
@@ -118,6 +167,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 30
       }
     },
     {
@@ -133,6 +189,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 120
       }
     },
     {
@@ -148,6 +211,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 60
       }
     },
     {
@@ -163,6 +233,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 150
       }
     },
     {
@@ -178,6 +255,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 80
       }
     },
     {
@@ -193,6 +277,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 200
       }
     },
     {
@@ -208,6 +299,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 100
       }
     },
     {
@@ -223,6 +321,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 90
       }
     },
     {
@@ -238,6 +343,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 45
       }
     },
     {
@@ -253,6 +365,13 @@
       "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Patch" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 70
       }
     },
     {
@@ -268,6 +387,13 @@
       "UpstreamHttpMethod": [ "Get", "Post" ],
       "AuthenticationOptions": {
         "AuthenticationProviderKey": "Bearer"
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": true,
+        "Period": "1m",
+        "PeriodTimeframe": 60,
+        "Limit": 35
       }
     }
   ],
@@ -278,12 +404,20 @@
     "HttpHandlerOptions": {
       "AllowAutoRedirect": true,
       "UseCookieContainer": true,
-      "UseProxy": false
+      "UseProxy": false,
+      "UseTracing": true
     },
     "RateLimitOptions": {
       "ClientIdHeader": "Client-Id",
-      "QuotaExceededMessage": "API call quota exceeded",
-      "RateLimitCounterPrefix": "ocelot"
+      "QuotaExceededMessage": "API call quota exceeded. Contact support for rate limit increase.",
+      "RateLimitCounterPrefix": "ocelot",
+      "DisableRateLimitHeaders": false,
+      "HttpStatusCode": 429
+    },
+    "QoSOptions": {
+      "ExceptionsAllowedBeforeBreaking": 3,
+      "DurationOfBreak": 30000,
+      "TimeoutValue": 5000
     }
   }
 }

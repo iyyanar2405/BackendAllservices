@@ -2,6 +2,7 @@ using ScheduleService.Data;
 using ScheduleService.GraphQL.Queries;
 using ScheduleService.Repositories;
 using ScheduleService.Services;
+using Schedule.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -17,6 +18,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IScheduleRepository, ScheduleRepository>();
 builder.Services.AddScoped<IScheduleService, ScheduleService.Services.ScheduleService>();
+
+// Add Resilience Policies
+builder.Services.AddResiliencePolicies();
+builder.Services.AddResilientHttpClient();
 
 builder.Services
     .AddGraphQLServer()

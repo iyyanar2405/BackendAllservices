@@ -3,6 +3,7 @@ using FinanceService.GraphQL.Mutations;
 using FinanceService.GraphQL.Queries;
 using FinanceService.Repositories;
 using FinanceService.Services;
+using Finance.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -18,6 +19,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddSingleton<DapperContext>();
 builder.Services.AddScoped<IFinanceRepository, FinanceRepository>();
 builder.Services.AddScoped<IFinanceService, FinanceService.Services.FinanceService>();
+
+// Add Resilience Policies
+builder.Services.AddResiliencePolicies();
+builder.Services.AddResilientHttpClient();
 
 builder.Services
     .AddGraphQLServer()

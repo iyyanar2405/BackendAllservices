@@ -114,3 +114,5 @@ D:\Dotnetfull_stack\BackEnd\src\Services\Action\obj\Release\net10.0\refint\Actio
 D:\Dotnetfull_stack\BackEnd\src\Services\Action\obj\Release\net10.0\ActionService.xml
 D:\Dotnetfull_stack\BackEnd\src\Services\Action\obj\Release\net10.0\ActionService.genruntimeconfig.cache
 D:\Dotnetfull_stack\BackEnd\src\Services\Action\obj\Release\net10.0\ref\ActionService.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Action\bin\Release\net10.0\Polly.dll
+D:\Dotnetfull_stack\BackEnd\src\Services\Action\bin\Release\net10.0\Polly.Core.dll

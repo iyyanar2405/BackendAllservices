@@ -1,5 +1,6 @@
 using CertificateService.Data.Entities;
 using CertificateServiceEntity = CertificateService.Data.Entities.CertificateService;
+using CertificateEntity = CertificateService.Data.Entities.Certificate;
 using Microsoft.EntityFrameworkCore;
 
 namespace CertificateService.Data
@@ -11,7 +12,7 @@ namespace CertificateService.Data
         {
         }
 
-        public DbSet<Certificate> Certificates => Set<Certificate>();
+        public DbSet<CertificateEntity> Certificates => Set<CertificateEntity>();
         public DbSet<Company> Companies => Set<Company>();
         public DbSet<Site> Sites => Set<Site>();
         public DbSet<Service> Services => Set<Service>();
@@ -25,8 +26,8 @@ namespace CertificateService.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Certificate>().ToTable("Certificates");
-            modelBuilder.Entity<Certificate>().HasKey(entity => entity.CertificateId);
+            modelBuilder.Entity<CertificateEntity>().ToTable("Certificates");
+            modelBuilder.Entity<CertificateEntity>().HasKey(entity => entity.CertificateId);
 
             modelBuilder.Entity<Company>().ToTable("Companies");
             modelBuilder.Entity<Company>().HasKey(entity => entity.CompanyId);
