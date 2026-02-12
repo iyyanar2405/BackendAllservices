@@ -59,6 +59,10 @@
               "target": "Package",
               "version": "[15.1.12, )"
             },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[6.1.1, )"
@@ -66,6 +70,10 @@
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[10.0.2, )"
+            },
+            "Microsoft.Extensions.Caching.StackExchangeRedis": {
+              "target": "Package",
+              "version": "[10.0.0, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -86,6 +94,10 @@
             "Serilog.Extensions.Logging": {
               "target": "Package",
               "version": "[10.0.0, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.7.33, )"
             }
           },
           "imports": [

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ActionService</name>
+    </assembly>
+    <members>
+        <member name="T:ActionService.CQRS.ICommand`1">
+            <summary>
+            Base interface for commands
+            </summary>
+        </member>
+        <member name="T:ActionService.CQRS.ICommandHandler`2">
+            <summary>
+            Base interface for command handlers
+            </summary>
+        </member>
+        <member name="T:ActionService.CQRS.ICommandDispatcher">
+            <summary>
+            Command dispatcher interface
+            </summary>
+        </member>
+        <member name="T:ActionService.CQRS.CommandDispatcher">
+            <summary>
+            Implementation of command dispatcher using dependency injection
+            </summary>
+        </member>
+        <member name="T:ActionService.CQRS.IQuery`1">
+            <summary>
+            Base interface for queries
+            </summary>
+        </member>
+        <member name="T:ActionService.CQRS.IQueryHandler`2">
+            <summary>
+            Base interface for query handlers
+            </summary>
+        </member>
+        <member name="T:ActionService.CQRS.IQueryDispatcher">
+            <summary>
+            Query dispatcher interface
+            </summary>
+        </member>
+        <member name="T:ActionService.CQRS.QueryDispatcher">
+            <summary>
+            Implementation of query dispatcher using dependency injection
+            </summary>
+        </member>
+        <member name="T:ActionService.Extensions.DistributedCacheExtensions">
+            <summary>
+            Extension methods for configuring distributed caching with Redis
+            </summary>
+        </member>
+        <member name="M:ActionService.Extensions.DistributedCacheExtensions.AddRedisCache(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Add Redis distributed cache to the service collection
+            </summary>
+        </member>
+        <member name="T:ActionService.Extensions.IRedisCacheService">
+            <summary>
+            Service for managing distributed cache operations
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.IEventPublisher">
+            <summary>
+            Base interface for event publishing
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.IEvent">
+            <summary>
+            Base interface for all events
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.Event">
+            <summary>
+            Base event class
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.InMemoryEventPublisher">
+            <summary>
+            In-memory event publisher implementation
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.IEventSubscriber">
+            <summary>
+            Event subscriber interface
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.IEventHandler`1">
+            <summary>
+            Generic event handler interface
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.IRabbitMQEventPublisher">
+            <summary>
+            RabbitMQ-based event publisher (placeholder for future implementation)
+            </summary>
+        </member>
+        <member name="T:ActionService.Messaging.IEventService">
+            <summary>
+            Event service for publishing domain events
+            </summary>
+        </member>
+        <member name="T:ActionService.Middleware.ExceptionHandlingMiddleware">
+            <summary>
+            Middleware to handle exceptions and convert them to appropriate HTTP responses
+            </summary>
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+    </members>
+</doc>
